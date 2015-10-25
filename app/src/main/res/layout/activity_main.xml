@@ -1,3 +1,8 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+
 <LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -7,24 +12,481 @@
     android:background="#EFEFEF"
     tools:context=".MainActivity">
 
+    <!-- 顶部选项栏 -->
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="61dp"
+        android:layout_height="48dp"
         android:background="#24D5A7">
-
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top1"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="left|center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="广场"/>
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top2"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="16dp"
+            />
     </FrameLayout>
 
+    <!-- 广场icon栏 -->
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="233dp"
-        android:background="#FFD5A7">
+        android:layout_height="220dp"
+        android:background="#FFFFFF">
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnCount = "4"
+            android:rowCount="2">
+            <FrameLayout style="@style/MainFrame1">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon1"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="书籍"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame1">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon2"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="运动器材"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame1">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon3"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="服饰"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame1">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon4"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="电子设备"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame2">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon5"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="教具"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame2">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon6"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="代步工具"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame2">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon7"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="卡片"/>
+            </FrameLayout>
+            <FrameLayout style="@style/MainFrame2">
+                <ImageView
+                    style="@style/MainIcon"
+                    android:src="@drawable/main_icon8"/>
+                <TextView
+                    style="@style/MainFont"
+                    android:text="生活用品"/>
+            </FrameLayout>
+        </GridLayout>
     </FrameLayout>
 
+    <!-- 智能推荐栏 -->
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="203dp"
-        android:background="#24D5FF">
+        android:layout_height="160dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="6dp">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#2DD7A6"
+                android:textSize="18dp"
+                android:layout_gravity="left"
+                android:text="智能推荐"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#2DD7A6"
+                android:textSize="18dp"
+                android:layout_gravity="right"
+                android:text="更多"/>
+        </FrameLayout>
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="15dp"
+
+            android:layout_gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/id_gallery"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_gravity="top|left"
+                android:orientation="horizontal" >
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 有里枝"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  12RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng2"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 烹"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  10RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng3"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 食草家族"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  15RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng4"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 古都"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  12RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 有里枝"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  12RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/MainSmartCol"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/mainpng1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:text=" 有里枝"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:textColor="#9B9B9B"
+                            android:textSize="10dp"
+                            android:text=" 书籍     |  12RMB"/>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
     </FrameLayout>
 
+    <!-- 互动栏 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF"
+        android:layout_marginTop="6dp">
+        <FrameLayout
+            android:layout_marginRight="7dp"
+            style="@style/MainDiv">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/maindivicon1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"
+                android:text="爱心义卖"/>
+        </FrameLayout>
+        <FrameLayout
+            style="@style/MainDiv">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/maindivicon2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"
+                android:text="学霸书单"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_marginLeft="7dp"
+            style="@style/MainDiv">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/maindivicon3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"
+                android:text="跳蚤市场"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- 好友心愿栏 -->
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="6dp">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#2DD7A6"
+                android:textSize="18dp"
+                android:layout_gravity="left"
+                android:text="好友心愿"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#2DD7A6"
+                android:textSize="18dp"
+                android:layout_gravity="right"
+                android:text="更多"/>
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- 好友心愿list栏 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="2dp"
+        android:layout_height="100dp"
+        android:background="#FFFFFF">
+        <ImageView
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="left|center"
+            android:src="@drawable/main_head1"/>
+        <ImageView
+            android:layout_height="80dp"
+            android:layout_width="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/main_split"/>
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="30dp"
+                android:textSize="18dp"
+                android:text="工业设计史"/>
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                android:text="通过学习人类设计历史中，包括各种设计学派的设计风格、著名设计师及其作品的特色以及设计发展的历史条件。"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 好友心愿list栏 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#FFFFFF">
+        <ImageView
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="left|center"
+            android:src="@drawable/main_head1"/>
+        <ImageView
+            android:layout_height="80dp"
+            android:layout_width="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/main_split"/>
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="30dp"
+                android:textSize="18dp"
+                android:text="交互设计精髓"/>
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                android:text="通过学习人类设计历史中，包括各种设计学派的设计风格、著名设计师及其作品的特色以及设计发展的历史条件。"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
+
+</ScrollView>

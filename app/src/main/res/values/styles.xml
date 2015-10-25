@@ -4,8 +4,42 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <style name="BaseColor">
-
+    <style name="MainIcon">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_gravity">top|center</item>
     </style>
-
+    <style name="MainFrame1">
+        <item name="android:layout_width">71dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <style name="MainFrame2">
+        <item name="android:layout_width">71dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+    <style name="MainFont">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_gravity">bottom|center</item>
+    </style>
+    <style name="MainDiv">
+        <item name="android:layout_width">115dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">#24D5A7</item>
+    </style>
+    <style name="MainSmartCol">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
 </resources>

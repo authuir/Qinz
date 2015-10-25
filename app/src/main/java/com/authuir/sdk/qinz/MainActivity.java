@@ -1,9 +1,16 @@
 package com.authuir.sdk.qinz;
 
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatDialog;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+
+import com.github.magiepooh.recycleritemdecoration.ItemDecorations;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -11,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_list);
     }
 
     @Override
