@@ -34,7 +34,6 @@
                 android:layout_gravity="center"
                 android:text="书籍"/>
             <ImageView
-
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/main_top2"
@@ -59,13 +58,14 @@
 
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/main2_img2"
+                android:src="@drawable/main_searchicon"
                 android:layout_marginTop="14dp"
                 android:layout_marginLeft="22dp"
                 android:layout_gravity="left"
                 />
             <EditText
                 android:id="@+id/edit"
+                android:textColorHint="#c7c7c7"
                 android:padding="16dp"
                 android:layout_marginLeft="38dp"
                 android:hint="请输入您需要搜索的内容"

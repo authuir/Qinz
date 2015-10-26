@@ -1,12 +1,10 @@
 package com.authuir.sdk.qinz;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatDialog;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,36 +17,15 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class MainDetailActivity extends ActionBarActivity {
-
-    private TextView buybtn = null;
+public class MainVerifyActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_detail);
-
-        //设置滚动效果
-        ViewPager defaultViewpager = (ViewPager) findViewById(R.id.viewpager_default);
-        CircleIndicator defaultIndicator = (CircleIndicator) findViewById(R.id.indicator_default);
-        DemoPagerAdapter defaultPagerAdapter = new DemoPagerAdapter(getSupportFragmentManager());
-        defaultViewpager.setAdapter(defaultPagerAdapter);
-        defaultIndicator.setViewPager(defaultViewpager);
-
-        buybtn = (TextView) findViewById(R.id.main_detail_buy);
-        buybtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainDetailActivity.this, MainVerifyActivity.class);
-                MainDetailActivity.this.startActivity(intent);
-                MainDetailActivity.this.finish();
-            }
-        });
+        setContentView(R.layout.activity_main_verify);
 
     }
 
@@ -56,9 +33,9 @@ public class MainDetailActivity extends ActionBarActivity {
         super.onBackPressed();
         //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainDetailActivity.this, MainActivity.class);
-        MainDetailActivity.this.startActivity(intent);
-        MainDetailActivity.this.finish();
+        intent.setClass(MainVerifyActivity.this, MainActivity.class);
+        MainVerifyActivity.this.startActivity(intent);
+        MainVerifyActivity.this.finish();
     }
 
     @Override

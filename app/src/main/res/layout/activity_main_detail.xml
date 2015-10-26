@@ -135,7 +135,7 @@
                     android:layout_gravity="left"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="90dp"
-                    android:text="希望有朋友教教我回话、水彩或者水份都行。只要你有空的时候教教我就行。"/>
+                    android:text="希望有朋友教教我绘画、水彩或者水份都行。只要你有空的时候教教我就行。"/>
             </FrameLayout>
             <ImageView
                 android:layout_width="340dp"
@@ -308,6 +308,7 @@
                 android:layout_height="60dp"
                 android:background="#21D7A7">
                 <TextView
+                    android:id="@+id/main_detail_buy"
                     android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
