@@ -18,6 +18,7 @@
         android:layout_height="48dp"
         android:background="#24D5A7">
         <ImageView
+            android:id="@+id/main_menuicon"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:src="@drawable/main_top1"
@@ -52,6 +53,7 @@
             android:rowCount="2">
             <FrameLayout style="@style/MainFrame1">
                 <ImageView
+                    android:id="@+id/main_icon1"
                     style="@style/MainIcon"
                     android:src="@drawable/main_icon1"/>
                 <TextView
@@ -168,6 +170,7 @@
                         android:layout_width="100dp"
                         android:layout_height="150dp">
                         <ImageView
+                            android:id="@+id/main_book1"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:src="@drawable/mainpng1"/>
@@ -430,12 +433,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_gravity="left|center"
-            android:src="@drawable/main_head1"/>
+            android:src="@drawable/main_hot_head1"/>
         <ImageView
             android:layout_height="80dp"
             android:layout_width="5dp"
             android:layout_gravity="center"
-            android:src="@drawable/main_split"/>
+            android:src="@drawable/main_split_solid"/>
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="100dp"
@@ -464,12 +467,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_gravity="left|center"
-            android:src="@drawable/main_head1"/>
+            android:src="@drawable/main_hot_head2"/>
         <ImageView
             android:layout_height="80dp"
             android:layout_width="5dp"
             android:layout_gravity="center"
-            android:src="@drawable/main_split"/>
+            android:src="@drawable/main_split_solid"/>
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="100dp"

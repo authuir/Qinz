@@ -1,0 +1,63 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        tools:context=".MainActivity">
+
+        <!-- 顶部选项栏 -->
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#24D5A7">
+            <ImageView
+                android:id="@+id/main_menuicon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/main_top1"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:text="广场"/>
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/main_top2"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="16dp"
+                />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator_default"
+                android:layout_centerInParent="true"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
