@@ -234,7 +234,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 交易UP主 -->
+        <!-- 和UP主的中间好友 -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -277,6 +277,45 @@
                 android:src="@drawable/main_hot_head3"/>
         </LinearLayout>
 
+        <!-- 买买买 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="2dp"
+            android:background="#FFFFFF">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/main_talk_icon"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="left|center"/>
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:background="#4FAFD9">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"
+                    android:text="加入购物车"/>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:background="#21D7A7">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"
+                    android:text="立即购买"/>
+            </FrameLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

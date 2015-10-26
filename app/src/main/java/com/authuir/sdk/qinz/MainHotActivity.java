@@ -70,7 +70,6 @@ public class MainHotActivity extends ActionBarActivity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        //System.out.println("°´ÏÂÁËback¼ü   onBackPressed()");
         Intent intent = new Intent();
         intent.setClass(MainHotActivity.this, MainActivity.class);
         MainHotActivity.this.startActivity(intent);
