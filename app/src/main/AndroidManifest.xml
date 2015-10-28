@@ -20,5 +20,6 @@
         <activity android:name=".MainVerifyActivity"></activity>
         <activity android:name=".MainCartActivity"></activity>
         <activity android:name=".MainReqDetailActivity"></activity>
+        <activity android:name=".DirtActivity"></activity>
     </application>
 </manifest>
