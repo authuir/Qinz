@@ -22,32 +22,21 @@ import org.w3c.dom.Text;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class MainVerifyActivity extends ActionBarActivity {
-
-    TextView btnVerify = null;
+public class MainTemplate extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_verify);
-        btnVerify = (TextView) findViewById(R.id.main_detail_buy);
-        btnVerify.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainVerifyActivity.this, MainCartActivity.class);
-                MainVerifyActivity.this.startActivity(intent);
-                MainVerifyActivity.this.finish();
-            }
-        });
     }
 
     public void onBackPressed() {
         super.onBackPressed();
         //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainVerifyActivity.this, MainActivity.class);
-        MainVerifyActivity.this.startActivity(intent);
-        MainVerifyActivity.this.finish();
+        intent.setClass(MainTemplate.this, MainActivity.class);
+        MainTemplate.this.startActivity(intent);
+        MainTemplate.this.finish();
     }
 
     @Override

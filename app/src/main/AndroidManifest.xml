@@ -18,5 +18,7 @@
         <activity android:name=".MainHotActivity"></activity>
         <activity android:name=".MainDetailActivity"></activity>
         <activity android:name=".MainVerifyActivity"></activity>
+        <activity android:name=".MainCartActivity"></activity>
+        <activity android:name=".MainReqDetailActivity"></activity>
     </application>
 </manifest>

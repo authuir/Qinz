@@ -22,6 +22,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class MainHotActivity extends ActionBarActivity {
     private TabHost mTabHost = null;
     private TabWidget mTabWidget = null;
+    private ImageView mReqHead = null;
 
     private ImageView mImgleft = null,mImgright = null;
     private TextView mTextleft = null,mTextright = null;
@@ -31,6 +32,7 @@ public class MainHotActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hotbook);
 
+        mReqHead = (ImageView) findViewById(R.id.request1);
 
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mImgleft = (ImageView) super.findViewById(R.id.main_hot_left);
@@ -55,6 +57,15 @@ public class MainHotActivity extends ActionBarActivity {
                 mTextright.setTextColor(Color.parseColor("#727272"));
                 mTextleft.setTextColor(Color.parseColor("#01CA97"));
                 mTabHost.setCurrentTab(1);
+            }
+        });
+
+        mReqHead.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainHotActivity.this, MainReqDetailActivity.class);
+                MainHotActivity.this.startActivity(intent);
+                MainHotActivity.this.finish();
             }
         });
 

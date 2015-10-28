@@ -22,32 +22,33 @@ import org.w3c.dom.Text;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class MainVerifyActivity extends ActionBarActivity {
+public class MainReqDetailActivity extends ActionBarActivity {
 
-    TextView btnVerify = null;
+    FrameLayout buybtn = null;
+
+    public void buybtn_onclick(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainReqDetailActivity.this, MainActivity.class);
+        MainReqDetailActivity.this.startActivity(intent);
+        MainReqDetailActivity.this.finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_verify);
-        btnVerify = (TextView) findViewById(R.id.main_detail_buy);
-        btnVerify.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainVerifyActivity.this, MainCartActivity.class);
-                MainVerifyActivity.this.startActivity(intent);
-                MainVerifyActivity.this.finish();
-            }
-        });
+        setContentView(R.layout.activity_main_request_detail);
+
+        buybtn = (FrameLayout) findViewById(R.id.buybuybuy);
     }
 
     public void onBackPressed() {
         super.onBackPressed();
         //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainVerifyActivity.this, MainActivity.class);
-        MainVerifyActivity.this.startActivity(intent);
-        MainVerifyActivity.this.finish();
+        intent.setClass(MainReqDetailActivity.this, MainActivity.class);
+        MainReqDetailActivity.this.startActivity(intent);
+        MainReqDetailActivity.this.finish();
     }
 
     @Override
