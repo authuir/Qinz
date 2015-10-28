@@ -676,6 +676,9 @@ public class ResideLayout extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent ev) {
+
+
+
         if (!mCanSlide) {
             return super.onTouchEvent(ev);
         }
@@ -690,6 +693,8 @@ public class ResideLayout extends ViewGroup {
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
+
+                Log.d("TAG", "Touched Down!");
                 break;
             }
 
@@ -707,6 +712,8 @@ public class ResideLayout extends ViewGroup {
                         break;
                     }
                 }
+
+                Log.d("TAG", "Touched Up!");
                 break;
             }
         }

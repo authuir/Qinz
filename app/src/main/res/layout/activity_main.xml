@@ -57,18 +57,25 @@
             </FrameLayout>
 
             <LinearLayout
+                android:onClick="onClick_ML_mainview"
+                android:id="@+id/mainview_lout"
                 android:layout_width="fill_parent"
+                android:background="@color/qinz_dep"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_height="70dp">
                 <ImageView
+                    android:id="@+id/mainview_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
-                    android:src="@drawable/dirt_icon1"/>
+                    android:src="@drawable/dirt_icon1_rev"/>
                 <TextView
+                    android:id="@+id/mainview_text"
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
-                    android:textColor="#30d09a"
+                    android:textColor="@color/pwhite"
                     android:layout_width="50dp"
                     android:layout_height="24dp"
                     android:textSize="20dp"
@@ -76,15 +83,20 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick_ML_fridview"
+                android:id="@+id/fridview_lout"
                 android:layout_width="fill_parent"
+                android:layout_marginLeft="10dp"
                 android:layout_height="70dp">
                 <ImageView
+                    android:id="@+id/fridview_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon2"/>
                 <TextView
+                    android:id="@+id/fridview_text"
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="#30d09a"
@@ -95,15 +107,20 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick_ML_newsview"
+                android:id="@+id/newsview_lout"
                 android:layout_width="fill_parent"
+                android:layout_marginLeft="10dp"
                 android:layout_height="70dp">
                 <ImageView
+                    android:id="@+id/newsview_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon3"/>
                 <TextView
+                    android:id="@+id/newsview_text"
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="#30d09a"
@@ -114,18 +131,23 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick_ML_persview"
                 android:layout_width="fill_parent"
+                android:id="@+id/persview_lout"
+                android:layout_marginLeft="10dp"
                 android:layout_height="70dp">
                 <ImageView
+                    android:id="@+id/persview_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon4"/>
                 <TextView
+                    android:id="@+id/persview_text"
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
-                    android:textColor="#30d09a"
+                    android:textColor="@color/qinz"
                     android:layout_width="50dp"
                     android:layout_height="24dp"
                     android:textSize="20dp"
@@ -141,10 +163,360 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <LinearLayout
+                android:orientation="vertical"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EFEFEF"
+                tools:context=".MainActivity">
+
+                <!-- 顶部选项栏 -->
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="#24D5A7">
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/main_top1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_gravity="left|center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        android:text="消息"/>
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/main_top2"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="16dp"
+                        />
+                </FrameLayout>
+
+                <!-- 热门商品|求购求租 -->
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:background="#F5F5F5">
+                    <ImageView
+                        android:id="@+id/main_hot_left"
+                        android:layout_width="100dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/main_hot_leftfocus"
+                        android:layout_marginLeft="80dp"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="left|center"
+                        />
+                    <ImageView
+                        android:id="@+id/main_hot_right"
+                        android:layout_width="100dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/main_hot_right"
+                        android:layout_marginRight="80dp"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="right|center"
+                        />
+                    <TextView
+                        android:id="@+id/main_hottext_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#727272"
+                        android:textSize="14dp"
+                        android:layout_gravity="left|center"
+                        android:layout_marginLeft="106dp"
+                        android:text="好友消息"/>
+                    <TextView
+                        android:id="@+id/main_hottext_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#01CA97"
+                        android:textSize="14dp"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="106dp"
+                        android:text="商品消息"/>
+                </FrameLayout>
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp">
+                </TabWidget>
+
+                <FrameLayout android:id="@android:id/tabcontent"
+                    android:layout_height="wrap_content" android:layout_width="fill_parent">
+                    <LinearLayout
+                        android:id="@+id/tabcnt2"
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:scrollbars="vertical">
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:background="#FFFFFF">
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_height="60dp"
+                                            android:layout_width="60dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/main_icon1"/>
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="80dp">
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_height="100dp"
+                                                android:layout_width="300dp">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="18dp"
+                                                    android:text="新学期书单推荐"
+                                                    android:textColor="#000000"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginLeft="10dp"/>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:text="新学期视觉传达专业教材教参推荐"
+                                                    android:layout_marginLeft="10dp"/>
+
+                                            </LinearLayout>
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:background="#FFFFFF">
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_height="60dp"
+                                            android:layout_width="60dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/main_icon1"/>
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="80dp">
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_height="100dp"
+                                                android:layout_width="300dp">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="18dp"
+                                                    android:text="新学期书单推荐"
+                                                    android:textColor="#000000"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginLeft="10dp"/>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:text="新学期视觉传达专业教材教参推荐"
+                                                    android:layout_marginLeft="10dp"/>
+
+                                            </LinearLayout>
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:background="#FFFFFF">
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_height="60dp"
+                                            android:layout_width="60dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/main_icon1"/>
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="80dp">
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_height="100dp"
+                                                android:layout_width="300dp">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="18dp"
+                                                    android:text="新学期书单推荐"
+                                                    android:textColor="#000000"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginLeft="10dp"/>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:text="新学期视觉传达专业教材教参推荐"
+                                                    android:layout_marginLeft="10dp"/>
+
+                                            </LinearLayout>
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+                        </ScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tabcnt1"
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:scrollbars="vertical">
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:background="#FFFFFF">
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_height="60dp"
+                                            android:layout_width="60dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/main_hot_head1"/>
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="80dp">
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_height="100dp"
+                                                android:layout_width="300dp">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="16dp"
+                                                    android:text="立正"
+                                                    android:textColor="#000000"
+                                                    android:layout_marginTop="8dp"
+                                                    android:layout_marginLeft="10dp"/>
+                                                <TextView
+                                                    android:layout_width="270dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="6dp"
+                                                    android:text="话说我想和你买那本工业设计史，学姐能不能打..."
+                                                    android:layout_marginLeft="10dp"/>
+
+                                            </LinearLayout>
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:background="#FFFFFF">
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_height="60dp"
+                                            android:layout_width="60dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_gravity="center"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/main_hot_head2"/>
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="80dp">
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_height="100dp"
+                                                android:layout_width="300dp">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="16dp"
+                                                    android:text="Authuir"
+                                                    android:textColor="#000000"
+                                                    android:layout_marginTop="8dp"
+                                                    android:layout_marginLeft="10dp"/>
+                                                <TextView
+                                                    android:layout_width="270dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="6dp"
+                                                    android:text="意思就是我帮你把快递领了，你给我那本书？"
+                                                    android:layout_marginLeft="10dp"/>
+
+                                            </LinearLayout>
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
+
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mainview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:scrollbars="vertical">
+            android:scrollbars="vertical"
+            android:visibility="visible">
 
             <LinearLayout
                 android:orientation="vertical"

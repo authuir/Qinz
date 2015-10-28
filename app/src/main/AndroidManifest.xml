@@ -22,5 +22,6 @@
         <activity android:name=".MainReqDetailActivity"></activity>
         <activity android:name=".MainFloatingButtonActivity"></activity>
         <activity android:name=".DirtActivity"></activity>
+        <activity android:name=".NewsActivity"></activity>
     </application>
 </manifest>
