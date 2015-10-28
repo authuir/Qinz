@@ -215,6 +215,7 @@
                         </FrameLayout>
                         <FrameLayout style="@style/MainFrame1">
                             <ImageView
+                                android:id="@+id/main_icon3"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon3"/>
                             <TextView
@@ -638,6 +639,7 @@
             </LinearLayout>
 
         </ScrollView>
+
     </RelativeLayout>
 
 </com.authuir.sdk.qinz.ResideLayout>

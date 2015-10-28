@@ -1,5 +1,8 @@
 package com.authuir.sdk.qinz;
 
+import com.authuir.sdk.fabbtn.FloatingActionButton;
+import com.authuir.sdk.fabbtn.FloatingActionsMenu;
+
 import android.content.Intent;
 import android.media.Image;
 import android.support.v4.view.ViewPager;
@@ -21,7 +24,7 @@ import me.relex.circleindicator.CircleIndicator;
 
 
 public class MainActivity extends ActionBarActivity {
-    private ImageView mIcon1 = null,mIcon2 = null;
+    private ImageView mIcon1 = null,mIcon2 = null,mIcon3 = null;
     private ImageView mIconmenu = null;
     private ImageView mBookIcon1 = null;
     private ImageView mBookIcon2 = null;
@@ -29,18 +32,11 @@ public class MainActivity extends ActionBarActivity {
     private void InitVal()
     {
         mIcon1 = (ImageView) findViewById(R.id.main_icon1);
+        mIcon2 = (ImageView) findViewById(R.id.main_icon2);
+        mIcon3 = (ImageView) findViewById(R.id.main_icon3);
         mIconmenu = (ImageView) findViewById(R.id.main_menuicon);
         mBookIcon1 = (ImageView) findViewById(R.id.main_book1);
-        mIcon2 = (ImageView) findViewById(R.id.main_icon2);
 
-        mIcon2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, DirtActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
-            }
-        });
 
         mIcon1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -50,7 +46,22 @@ public class MainActivity extends ActionBarActivity {
                 MainActivity.this.finish();
             }
         });
-
+        mIcon2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MainFloatingButtonActivity.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.finish();
+            }
+        });
+        mIcon3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, DirtActivity.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.finish();
+            }
+        });
         mIconmenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d("TAG","book click");
@@ -69,6 +80,7 @@ public class MainActivity extends ActionBarActivity {
                 MainActivity.this.finish();
             }
         });
+
     }
 
     @Override
