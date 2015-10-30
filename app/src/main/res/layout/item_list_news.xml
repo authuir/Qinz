@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="#FFFFFF">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main_icon1"/>
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="80dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_height="100dp"
+                    android:layout_width="300dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="新学期书单推荐"
+                        android:textColor="#000000"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#444444"
+                        android:text="新学期视觉传达专业教材教参推荐"
+                        android:layout_marginLeft="10dp"/>
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

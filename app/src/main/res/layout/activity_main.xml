@@ -224,7 +224,7 @@
                         android:id="@+id/main_hot_right"
                         android:layout_width="100dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/main_hot_right"
+                        android:src="@drawable/main_hot_rightunfocus"
                         android:layout_marginRight="80dp"
                         android:scaleType="centerCrop"
                         android:layout_gravity="right|center"
@@ -233,7 +233,7 @@
                         android:id="@+id/main_hottext_left"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#727272"
+                        android:textColor="@color/textqml"
                         android:textSize="14dp"
                         android:layout_gravity="left|center"
                         android:layout_marginLeft="106dp"
@@ -242,7 +242,7 @@
                         android:id="@+id/main_hottext_right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#01CA97"
+                        android:textColor="@color/textgray"
                         android:textSize="14dp"
                         android:layout_gravity="right|center"
                         android:layout_marginRight="106dp"
@@ -399,6 +399,11 @@
                                     </LinearLayout>
                                 </FrameLayout>
 
+                                <com.baoyz.swipemenulistview.SwipeMenuListView
+                                    android:id="@+id/news_goodslistview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="190dp" />
+
                             </LinearLayout>
 
                         </ScrollView>
@@ -501,6 +506,14 @@
                                         </FrameLayout>
                                     </LinearLayout>
                                 </FrameLayout>
+
+                                <com.baoyz.swipemenulistview.SwipeMenuListView
+                                    android:id="@+id/news_fridlistview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="190dp" />
+
+
+
 
 
                             </LinearLayout>

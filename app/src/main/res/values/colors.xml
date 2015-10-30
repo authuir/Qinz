@@ -13,4 +13,7 @@
     <color name="qinz_dep">#2fd199</color>
     <color name="dirtbg">#2f323b</color>
     <color name="pwhite">#FFFFFF</color>
+    <color name="fridbg">#FEFEFE</color>
+    <color name="textqml">#01CA97</color>
+    <color name="textgray">#727272</color>
 </resources>

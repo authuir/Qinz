@@ -67,12 +67,14 @@ public class MainCartActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cart);
 
+
+
+
         mListView = (SwipeMenuListView) findViewById(R.id.cartlistview);
         mAppList = getPackageManager().getInstalledApplications(0);
         mAdapter= new AppAdapter(this);
 
         mListView.setAdapter(mAdapter);
-
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
@@ -123,6 +125,7 @@ public class MainCartActivity extends ActionBarActivity {
                 switch (index) {
                     case 0:
                         mAppList.remove(position);
+                        mAdapter.notifyDataSetChanged();
                         break;
                     case 1:
                         // delete
@@ -240,8 +243,6 @@ public class MainCartActivity extends ActionBarActivity {
             ApplicationInfo item = getItem(position);
             return convertView;
         }
-
-
     }
 
     private int dp2px(int dp) {

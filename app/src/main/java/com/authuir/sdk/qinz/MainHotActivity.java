@@ -2,21 +2,15 @@ package com.authuir.sdk.qinz;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
-
-import me.relex.circleindicator.CircleIndicator;
 
 
 public class MainHotActivity extends ActionBarActivity {
@@ -40,22 +34,28 @@ public class MainHotActivity extends ActionBarActivity {
         mTextleft = (TextView) super.findViewById(R.id.main_hottext_left);
         mTextright = (TextView) super.findViewById(R.id.main_hottext_right);
 
+        mTabHost = (TabHost) findViewById(android.R.id.tabhost);
+        mImgleft = (ImageView) super.findViewById(R.id.main_hot_left);
+        mImgright = (ImageView) super.findViewById(R.id.main_hot_right);
+        mTextleft = (TextView) super.findViewById(R.id.main_hottext_left);
+        mTextright = (TextView) super.findViewById(R.id.main_hottext_right);
+
         mImgleft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mImgleft.setImageResource(R.drawable.main_hot_leftfocus);
-                mImgright.setImageResource(R.drawable.main_hot_right);
-                mTextleft.setTextColor(Color.parseColor("#727272"));
-                mTextright.setTextColor(Color.parseColor("#01CA97"));
+                mImgright.setImageResource(R.drawable.main_hot_rightunfocus);
+                mTextright.setTextColor(Color.parseColor("#727272"));
+                mTextleft.setTextColor(Color.parseColor("#01CA97"));
                 mTabHost.setCurrentTab(0);
             }
         });
 
         mImgright.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mImgleft.setImageResource(R.drawable.main_hot_left);
+                mImgleft.setImageResource(R.drawable.main_hot_leftunfocus);
                 mImgright.setImageResource(R.drawable.main_hot_rightfocus);
-                mTextright.setTextColor(Color.parseColor("#727272"));
-                mTextleft.setTextColor(Color.parseColor("#01CA97"));
+                mTextleft.setTextColor(Color.parseColor("#727272"));
+                mTextright.setTextColor(Color.parseColor("#01CA97"));
                 mTabHost.setCurrentTab(1);
             }
         });
