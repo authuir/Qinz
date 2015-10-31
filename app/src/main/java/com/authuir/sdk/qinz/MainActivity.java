@@ -6,6 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class MainActivity extends ActionBarActivity {
     private ImageView mBookIcon1 = null;
     private ImageView mBookIcon2 = null;
 
+    private com.authuir.sdk.fabbtn.FloatingActionButton mReque,mSell;
+
     private ScrollView mainView = null;
 
     private ResideLayout residelout = null;
@@ -61,17 +64,26 @@ public class MainActivity extends ActionBarActivity {
     private newsAdapter mAdapter ;
 
     private class CartList{
-        private String GoodsName;
-        private String GoodsPric;
-        private String GoodsTask;
+        public String GoodsName;
+        public Drawable GoodsImg;
+        public String GoodsDetail;
+        private String GoodsID;
+        private Resources Res;
         public CartList()
         {
-            GoodsName = "fjds";
-            GoodsPric = "dsjfk";
-            GoodsTask = "sdfsdf";
+            Res = Resources.getSystem();
+            GoodsName = "新学期书单推荐";
+            GoodsDetail = "新学期视觉传达专业教材教参推荐";
+            GoodsImg = MainActivity.this.getResources().getDrawable(R.drawable.main_head1);
+        }
+        public CartList(String title,String detail,int icon_id)
+        {
+            Res = Resources.getSystem();
+            GoodsName = title;
+            GoodsDetail = detail;
+            GoodsImg = MainActivity.this.getResources().getDrawable(icon_id);
         }
     }
-
 
     private void InitVal()
     {
@@ -81,10 +93,33 @@ public class MainActivity extends ActionBarActivity {
         mIconmenu = (ImageView) findViewById(R.id.main_menuicon);
         mBookIcon1 = (ImageView) findViewById(R.id.main_book1);
         residelout = (ResideLayout) findViewById(R.id.reside_layout);
+
         mAppList = new ArrayList<CartList>();
 
-        CartList f1 = new CartList();
-        CartList f2 = new CartList();
+        mReque = (com.authuir.sdk.fabbtn.FloatingActionButton) findViewById(R.id.action_a);
+        mSell = (com.authuir.sdk.fabbtn.FloatingActionButton) findViewById(R.id.action_b);
+
+        mReque.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MainRequestActivity.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.finish();
+            }
+        });
+
+
+        mSell.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+                 Intent intent = new Intent();
+                 intent.setClass(MainActivity.this, TestActivity.class);
+                 MainActivity.this.startActivity(intent);
+                 MainActivity.this.finish();
+             }
+        });
+
+        CartList f1 = new CartList("新活动推荐","新学期电子信息系教材推荐",R.drawable.main_hot_head2);
+        CartList f2 = new CartList("好消息","50G硬盘免费领取",R.drawable.main_hot_head1);
         CartList f3 = new CartList();
 
         mListView = (SwipeMenuListView) findViewById(R.id.news_goodslistview);
@@ -95,20 +130,19 @@ public class MainActivity extends ActionBarActivity {
 
         mListView.setAdapter(mAdapter);
 
-
         qml = new QinzMenuList();
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
             @Override
             public void create(SwipeMenu menu) {
-                SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
-                deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,0x3F, 0x25)));
-                deleteItem.setWidth(dp2px(90));
-                deleteItem.setTitle("删除");
-                deleteItem.setTitleSize(20);
-                deleteItem.setTitleColor(Color.WHITE);
-                menu.addMenuItem(deleteItem);
+            SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
+            deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,0x3F, 0x25)));
+            deleteItem.setWidth(dp2px(90));
+            deleteItem.setTitle("删除");
+            deleteItem.setTitleSize(20);
+            deleteItem.setTitleColor(Color.WHITE);
+            menu.addMenuItem(deleteItem);
             }
         };
 
@@ -313,7 +347,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         private Context context;//用于接收传递过来的Context对象
-        private int cncnt = 3;
+
 
         public newsAdapter(Context context) {
             super();
@@ -322,7 +356,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public int getCount() {
-            return cncnt;
+            return mAppList.size();
         }
 
         @Override
@@ -339,9 +373,27 @@ public class MainActivity extends ActionBarActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = View.inflate(getApplicationContext(),R.layout.item_list_news, null);
+                new ViewHolder(convertView);
             }
+            ViewHolder holder = (ViewHolder) convertView.getTag();
             CartList item = getItem(position);
+            holder.tv_title.setText(mAppList.get(position).GoodsName);
+            holder.tv_detail.setText(mAppList.get(position).GoodsDetail);
+            holder.tv_icon.setImageDrawable(mAppList.get(position).GoodsImg);
             return convertView;
+        }
+
+        class ViewHolder {
+            ImageView tv_icon;
+            TextView tv_title;
+            TextView tv_detail;
+
+            public ViewHolder(View view) {
+                tv_icon = (ImageView) view.findViewById(R.id.news_goodsicon);
+                tv_title = (TextView) view.findViewById(R.id.news_goodsname);
+                tv_detail = (TextView) view.findViewById(R.id.news_goodsdetail);
+                view.setTag(this);
+            }
         }
     }
 

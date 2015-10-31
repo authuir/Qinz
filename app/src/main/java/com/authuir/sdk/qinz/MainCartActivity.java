@@ -7,8 +7,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -41,6 +43,7 @@ import com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
@@ -49,17 +52,29 @@ import me.relex.circleindicator.CircleIndicator;
 public class MainCartActivity extends ActionBarActivity {
 
     private class CartList{
-        private String GoodsName;
-        private String GoodsPric;
-        private String GoodsTask;
+        public String GoodsName;
+        public Drawable GoodsImg;
+        public String GoodsDetail;
+        private String GoodsID;
+        private Resources Res;
         public CartList()
         {
-
+            Res = Resources.getSystem();
+            GoodsName = "新学期书单推荐";
+            GoodsDetail = "新学期视觉传达专业教材教参推荐";
+            GoodsImg = MainCartActivity.this.getResources().getDrawable(R.drawable.main_head1);
+        }
+        public CartList(String title,String detail,int icon_id)
+        {
+            Res = Resources.getSystem();
+            GoodsName = title;
+            GoodsDetail = detail;
+            GoodsImg = MainCartActivity.this.getResources().getDrawable(icon_id);
         }
     }
 
     private SwipeMenuListView mListView ;
-    private List<ApplicationInfo> mAppList ;
+    private List<CartList> mAppList ;
     private AppAdapter mAdapter ;
 
     @Override
@@ -67,12 +82,14 @@ public class MainCartActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cart);
 
-
-
-
         mListView = (SwipeMenuListView) findViewById(R.id.cartlistview);
-        mAppList = getPackageManager().getInstalledApplications(0);
+        mAppList = new ArrayList<CartList>();
         mAdapter= new AppAdapter(this);
+
+        CartList data1 = new CartList(),data2 = new CartList();
+
+        mAppList.add(data1);
+        mAppList.add(data2);
 
         mListView.setAdapter(mAdapter);
 
@@ -80,22 +97,7 @@ public class MainCartActivity extends ActionBarActivity {
 
             @Override
             public void create(SwipeMenu menu) {
-/*
-                // create "open" item
-                SwipeMenuItem openItem = new SwipeMenuItem(getApplicationContext());
-                // set item background
-                openItem.setBackground(new ColorDrawable(Color.rgb(0xC9, 0xC9, 0xCE)));
-                // set item width
-                openItem.setWidth(dp2px(90));
-                // set item title
-                openItem.setTitle("Open");
-                // set item title fontsize
-                openItem.setTitleSize(20);
-                // set item title font color
-                openItem.setTitleColor(Color.WHITE);
-                // add to menu
-                menu.addMenuItem(openItem);
-*/
+
                 // create "delete" item
                 SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
                 // set item background
@@ -121,7 +123,7 @@ public class MainCartActivity extends ActionBarActivity {
         mListView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
-                ApplicationInfo item = mAppList.get(position);
+                CartList item = mAppList.get(position);
                 switch (index) {
                     case 0:
                         mAppList.remove(position);
@@ -211,22 +213,17 @@ public class MainCartActivity extends ActionBarActivity {
 
     public class AppAdapter extends BaseAdapter {
 
-
-        private Context context;//用于接收传递过来的Context对象
-        private int cncnt = 2;
-
         public AppAdapter(Context context) {
             super();
-            this.context = context;
         }
 
         @Override
         public int getCount() {
-            return cncnt;
+            return mAppList.size();
         }
 
         @Override
-        public ApplicationInfo getItem(int position) {
+        public CartList getItem(int position) {
             return mAppList.get(position);
         }
 
@@ -240,7 +237,7 @@ public class MainCartActivity extends ActionBarActivity {
             if (convertView == null) {
                 convertView = View.inflate(getApplicationContext(),R.layout.item_list_cart, null);
             }
-            ApplicationInfo item = getItem(position);
+            CartList item = getItem(position);
             return convertView;
         }
     }

@@ -12,6 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/news_goodsicon"
                 android:layout_height="60dp"
                 android:layout_width="60dp"
                 android:layout_marginLeft="10dp"
@@ -26,6 +27,7 @@
                     android:layout_height="100dp"
                     android:layout_width="300dp">
                     <TextView
+                        android:id="@+id/news_goodsname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
@@ -34,6 +36,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"/>
                     <TextView
+                        android:id="@+id/news_goodsdetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

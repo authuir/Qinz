@@ -23,5 +23,7 @@
         <activity android:name=".MainFloatingButtonActivity"></activity>
         <activity android:name=".DirtActivity"></activity>
         <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".MainRequestActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
     </application>
 </manifest>
