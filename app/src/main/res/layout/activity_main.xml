@@ -914,7 +914,7 @@
                 android:id="@+id/action_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_icon="@drawable/main_floating2"
+                fab:fab_icon="@drawable/main_requeicon"
                 fab:fab_colorNormal="@color/white"
                 fab:fab_colorPressed="@color/white_pressed"/>
 
@@ -922,7 +922,7 @@
                 android:id="@+id/action_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_icon="@drawable/main_floating3"
+                fab:fab_icon="@drawable/main_sellicon"
                 fab:fab_colorNormal="@color/white"
                 fab:fab_colorPressed="@color/white_pressed"/>
 

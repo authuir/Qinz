@@ -25,5 +25,6 @@
         <activity android:name=".NewsActivity"></activity>
         <activity android:name=".MainRequestActivity"></activity>
         <activity android:name=".TestActivity"></activity>
+        <activity android:name=".NewsBooklistActivity"></activity>
     </application>
 </manifest>

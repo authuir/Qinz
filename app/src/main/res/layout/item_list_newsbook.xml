@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="190dp">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_marginBottom="3dp"
+        android:background="#FFFFFF">
+        <ImageView
+            android:id="@+id/cart_item_icon"
+            android:scaleType="centerCrop"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:src="@drawable/newsbook1"/>
+        <TextView
+            android:id="@+id/cart_item_title"
+            android:textColor="#161616"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14dp"
+            android:text="人机交互设计"/>
+        <TextView
+            android:textColor="#353535"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="32dp"
+            android:textSize="12dp"
+            android:text="2015年秋季学期"/>
+        <TextView
+            android:textColor="#181818"
+            android:id="@+id/cart_item_task"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="50dp"
+            android:textSize="10dp"
+            android:text="希望有朋友教教我绘画、水彩或者水份都行。只要你有空的时候教教我就行。"/>
+    </FrameLayout>
+
+</RelativeLayout>

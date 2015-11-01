@@ -69,6 +69,7 @@ public class MainActivity extends ActionBarActivity {
         public String GoodsDetail;
         private String GoodsID;
         private Resources Res;
+        //private java.lang.class
         public CartList()
         {
             Res = Resources.getSystem();
@@ -112,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, TestActivity.class);
+                 intent.setClass(MainActivity.this, NewsBooklistActivity.class);
                  MainActivity.this.startActivity(intent);
                  MainActivity.this.finish();
              }
@@ -160,8 +161,6 @@ public class MainActivity extends ActionBarActivity {
 
                         break;
                     case 1:
-                        // delete
-                        //mAppList.remove(position);
                         Log.d("TAG", "Init 2."+position);
                         break;
                 }
@@ -201,6 +200,16 @@ public class MainActivity extends ActionBarActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), position + " long click", Toast.LENGTH_SHORT).show();
                 return false;
+            }
+        });
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NewsBooklistActivity.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.finish();
             }
         });
 
