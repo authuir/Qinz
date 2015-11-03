@@ -82,4 +82,28 @@ public class MainDetailActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onClick_Talk(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainDetailActivity.this,NewsTalkActivity.class);
+        MainDetailActivity.this.startActivity(intent);
+        MainDetailActivity.this.finish();
+    }
+
+    public void onClick_Cart(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainDetailActivity.this,MainCartActivity.class);
+        MainDetailActivity.this.startActivity(intent);
+        MainDetailActivity.this.finish();
+    }
+
+    public void onClick_Buy(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainDetailActivity.this,MainVerifyActivity.class);
+        MainDetailActivity.this.startActivity(intent);
+        MainDetailActivity.this.finish();
+    }
 }

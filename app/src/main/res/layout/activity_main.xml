@@ -66,8 +66,8 @@
                 android:layout_height="70dp">
                 <ImageView
                     android:id="@+id/mainview_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon1_rev"/>
@@ -76,9 +76,9 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="@color/pwhite"
-                    android:layout_width="50dp"
-                    android:layout_height="24dp"
-                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="广场"/>
             </LinearLayout>
 
@@ -90,8 +90,8 @@
                 android:layout_height="70dp">
                 <ImageView
                     android:id="@+id/fridview_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon2"/>
@@ -100,9 +100,9 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="#30d09a"
-                    android:layout_width="50dp"
-                    android:layout_height="24dp"
-                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="好友"/>
             </LinearLayout>
 
@@ -114,8 +114,8 @@
                 android:layout_height="70dp">
                 <ImageView
                     android:id="@+id/newsview_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon3"/>
@@ -124,9 +124,9 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="#30d09a"
-                    android:layout_width="50dp"
-                    android:layout_height="24dp"
-                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="消息"/>
             </LinearLayout>
 
@@ -138,8 +138,8 @@
                 android:layout_height="70dp">
                 <ImageView
                     android:id="@+id/persview_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:src="@drawable/dirt_icon4"/>
@@ -148,9 +148,9 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
                     android:textColor="@color/qinz"
-                    android:layout_width="50dp"
-                    android:layout_height="24dp"
-                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="主页"/>
             </LinearLayout>
 
@@ -163,6 +163,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- 消息界面 -->
         <TabHost
             android:id="@android:id/tabhost"
             android:layout_width="match_parent"
@@ -258,7 +259,7 @@
 
                 <FrameLayout android:id="@android:id/tabcontent"
                     android:layout_height="wrap_content" android:layout_width="fill_parent">
-                    <!-- Fpage1 -->
+                    <!-- 好友消息 -->
                     <LinearLayout
                         android:id="@+id/tabcnt2"
                         android:orientation="vertical"
@@ -279,10 +280,9 @@
                                     android:layout_height="500dp" />
 
                             </LinearLayout>
-
                         </ScrollView>
                     </LinearLayout>
-                    <!-- Fpage2 -->
+                    <!-- 商品消息 -->
                     <LinearLayout
                         android:id="@+id/tabcnt1"
                         android:orientation="vertical"
@@ -298,6 +298,8 @@
                                 android:layout_height="wrap_content">
 
                                 <FrameLayout
+                                    android:id="@+id/news_talk"
+                                    android:onClick="onClick_news_frid"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="3dp"
@@ -381,10 +383,6 @@
                                     </LinearLayout>
                                 </FrameLayout>
 
-                                <com.baoyz.swipemenulistview.SwipeMenuListView
-                                    android:id="@+id/news_fridlistview"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="190dp" />
 
                             </LinearLayout>
                         </ScrollView>
@@ -395,6 +393,7 @@
 
         </TabHost>
 
+        <!-- 广场界面 -->
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/mainview"
             android:layout_width="fill_parent"
@@ -432,6 +431,7 @@
                         android:layout_gravity="center"
                         android:text="广场"/>
                     <ImageView
+                        android:onClick="onClick_Search"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@drawable/main_top2"
@@ -459,7 +459,8 @@
                                 style="@style/MainFont"
                                 android:text="书籍"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame1">
+                        <FrameLayout style="@style/MainFrame1"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 android:id="@+id/main_icon2"
                                 style="@style/MainIcon"
@@ -468,7 +469,8 @@
                                 style="@style/MainFont"
                                 android:text="运动器材"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame1">
+                        <FrameLayout style="@style/MainFrame1"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 android:id="@+id/main_icon3"
                                 style="@style/MainIcon"
@@ -477,7 +479,8 @@
                                 style="@style/MainFont"
                                 android:text="服饰"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame1">
+                        <FrameLayout style="@style/MainFrame1"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon4"/>
@@ -485,7 +488,8 @@
                                 style="@style/MainFont"
                                 android:text="电子设备"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame2">
+                        <FrameLayout style="@style/MainFrame2"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon5"/>
@@ -493,7 +497,8 @@
                                 style="@style/MainFont"
                                 android:text="教具"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame2">
+                        <FrameLayout style="@style/MainFrame2"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon6"/>
@@ -501,7 +506,8 @@
                                 style="@style/MainFont"
                                 android:text="代步工具"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame2">
+                        <FrameLayout style="@style/MainFrame2"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon7"/>
@@ -509,7 +515,8 @@
                                 style="@style/MainFont"
                                 android:text="卡片"/>
                         </FrameLayout>
-                        <FrameLayout style="@style/MainFrame2">
+                        <FrameLayout style="@style/MainFrame2"
+                            android:onClick="onClick_Hot">
                             <ImageView
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon8"/>
@@ -599,6 +606,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="150dp">
                                     <ImageView
+                                        android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng2"/>
@@ -626,6 +634,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="150dp">
                                     <ImageView
+                                        android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng3"/>
@@ -653,6 +662,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="150dp">
                                     <ImageView
+                                        android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng4"/>
@@ -680,6 +690,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="150dp">
                                     <ImageView
+                                        android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng1"/>
@@ -707,6 +718,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="150dp">
                                     <ImageView
+                                        android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng1"/>
@@ -736,6 +748,7 @@
                     android:background="#FFFFFF"
                     android:layout_marginTop="6dp">
                     <FrameLayout
+                        android:onClick="onClick_act1"
                         android:layout_marginRight="7dp"
                         style="@style/MainDiv">
                         <ImageView
@@ -754,6 +767,7 @@
                             android:text="爱心义卖"/>
                     </FrameLayout>
                     <FrameLayout
+                        android:onClick="onClick_act2"
                         style="@style/MainDiv">
                         <ImageView
                             android:layout_width="50dp"
@@ -771,6 +785,7 @@
                             android:text="学霸书单"/>
                     </FrameLayout>
                     <FrameLayout
+                        android:onClick="onClick_act3"
                         android:layout_marginLeft="7dp"
                         style="@style/MainDiv">
                         <ImageView
@@ -844,6 +859,7 @@
                         android:layout_width="240dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="240dp"
@@ -878,6 +894,7 @@
                         android:layout_width="240dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="240dp"

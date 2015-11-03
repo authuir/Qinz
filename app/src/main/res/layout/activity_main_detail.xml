@@ -1,336 +1,356 @@
+<RelativeLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    tools:context=".MainActivity">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EFEFEF"
-        tools:context=".MainActivity">
 
-        <!-- 顶部选项栏 -->
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="48dp"
-            android:background="#24D5A7">
-            <ImageView
-                android:id="@+id/main_menuicon"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/main_top1"
-                android:layout_marginLeft="16dp"
-                android:layout_gravity="left|center"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:text="YAYAI KUSAMA"/>
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/main_top2"
-                android:layout_gravity="right|center"
-                android:layout_marginRight="16dp"
-                />
-        </FrameLayout>
-
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:scrollbars="vertical">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+            <!-- 顶部选项栏 -->
+            <FrameLayout
+                android:layout_alignParentTop="true"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="#24D5A7">
+            </FrameLayout>
 
-
-
-        <!-- 图片滑动栏 -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_weight="1">
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewpager_default"
+            <!-- 图片滑动栏 -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-            <!-- app:ci_margin换屏的点的距离 -->
-            <!-- app:ci_width ci_height 换屏的点的大小 -->
-            <me.relex.circleindicator.CircleIndicator
-                android:id="@+id/indicator_default"
-                android:layout_width="fill_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="240dp"
-                app:ci_width="8dp"
-                app:ci_height="8dp"
-                app:ci_drawable="@drawable/imng_selected"
-                app:ci_drawable_unselected="@drawable/imng_unselected"
-                />
-        </RelativeLayout>
+                android:layout_weight="1">
 
-        <!-- 商品介绍 -->
-        <FrameLayout
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:background="#FFFFFF">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top|right"
-                android:src="@drawable/bookmethod2"/>
-            <TextView
-                android:layout_height="16dp"
-                android:layout_width="16dp"
-                android:textSize="14dp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="top|right"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="3dp"
-                android:text="租"/>
-            <TextView
-                android:layout_height="16dp"
-                android:layout_width="130dp"
-                android:textSize="14dp"
-                android:textColor="#000000"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:text="YAYAI KUSAMA"/>
-            <TextView
-                android:layout_height="16dp"
-                android:layout_width="140dp"
-                android:textSize="14dp"
-                style="@style/MainColor"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="146dp"
-                android:text="@string/str_money_loc"/>
-            <TextView
-                android:layout_height="60dp"
-                android:layout_width="330dp"
-                android:textSize="12dp"
-                android:textColor="#000000"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="16dp"
-                android:text="世间的草间，无限的网，草间弥生自传《无限の网：草间弥生自传》中，约瑟夫·康奈尔是草间话费最多笔墨来描写的情人。她称约瑟夫·庞麦郎为“全美国最伟大的艺术家"/>
-        </FrameLayout>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-        <!-- 交易价格 -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:layout_marginTop="3dp"
-            android:background="#FFFFFF">
+                <!-- app:ci_margin换屏的点的距离 -->
+                <!-- app:ci_width ci_height 换屏的点的大小 -->
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="240dp"
+                    app:ci_width="8dp"
+                    app:ci_height="8dp"
+                    app:ci_drawable="@drawable/imng_selected"
+                    app:ci_drawable_unselected="@drawable/imng_unselected"
+                    />
+            </RelativeLayout>
+
+            <!-- 商品介绍 -->
             <FrameLayout
+                android:layout_height="fill_parent"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp">
+                android:background="#FFFFFF">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/bookmethod2"/>
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="任务交易"/>
+                    android:layout_height="16dp"
+                    android:layout_width="16dp"
+                    android:textSize="14dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="top|right"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="3dp"
+                    android:text="租"/>
                 <TextView
-                    android:layout_width="260dp"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="90dp"
-                    android:text="希望有朋友教教我绘画、水彩或者水份都行。只要你有空的时候教教我就行。"/>
-            </FrameLayout>
-            <ImageView
-                android:layout_width="340dp"
-                android:layout_height="4dp"
-                android:layout_gravity="center"
-                android:src="@drawable/main_splitall_hori"/>
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="40dp">
+                    android:layout_height="16dp"
+                    android:layout_width="130dp"
+                    android:textSize="14dp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="YAYAI KUSAMA"/>
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="积分交易"/>
-                <TextView
-                    android:layout_width="260dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="16dp"
+                    android:layout_width="140dp"
+                    android:textSize="14dp"
                     style="@style/MainColor"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="90dp"
-                    android:text="120"/>
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="146dp"
+                    android:text="@string/str_money_loc"/>
+                <TextView
+                    android:layout_height="60dp"
+                    android:layout_width="330dp"
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="世间的草间，无限的网，草间弥生自传《无限の网：草间弥生自传》中，约瑟夫·康奈尔是草间话费最多笔墨来描写的情人。她称约瑟夫·庞麦郎为“全美国最伟大的艺术家"/>
             </FrameLayout>
-        </LinearLayout>
 
-        <!-- 交易UP主 -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="90dp"
-            android:layout_marginTop="5dp"
-            android:background="#FFFFFF">
-            <ImageView
-                android:layout_height="70dp"
-                android:layout_width="70dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_gravity="left|center"
-                android:src="@drawable/main_hot_head1"/>
+            <!-- 交易价格 -->
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="110dp"
-                android:layout_height="fill_parent">
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="立正 ♂"/>
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="20dp"
-                    android:text="湖南大学12级"/>
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="20dp"
-                    android:text="视觉传达"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="200dp"
-                android:layout_height="fill_parent">
-                <LinearLayout
-                    android:orientation="horizontal"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="3dp"
+                android:background="#FFFFFF">
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="任务交易"/>
+                    <TextView
+                        android:layout_width="260dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="90dp"
+                        android:text="希望有朋友教教我绘画、水彩或者水份都行。只要你有空的时候教教我就行。"/>
+                </FrameLayout>
+                <ImageView
+                    android:layout_width="340dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/main_splitall_hori"/>
+                <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="40dp">
                     <TextView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="15dp"
-                        android:text="诚信指数"/>
+                        android:layout_width="100dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="积分交易"/>
                     <TextView
+                        android:layout_width="260dp"
+                        android:layout_height="fill_parent"
                         style="@style/MainColor"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="90dp"
+                        android:text="120"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- 交易UP主 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF">
+                <ImageView
+                    android:layout_height="70dp"
+                    android:layout_width="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="left|center"
+                    android:src="@drawable/main_hot_head1"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="110dp"
+                    android:layout_height="fill_parent">
+                    <TextView
                         android:layout_width="180dp"
                         android:layout_height="20dp"
                         android:layout_marginTop="15dp"
-                        android:text="98%"/>
+                        android:text="立正 ♂"/>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="湖南大学12级"/>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="视觉传达"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp">
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="交易数量"/>
-                    <TextView
-                        style="@style/MainColor"
-                        android:layout_width="180dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="12"/>
+                    android:orientation="vertical"
+                    android:layout_width="200dp"
+                    android:layout_height="fill_parent">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp">
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="15dp"
+                            android:text="诚信指数"/>
+                        <TextView
+                            style="@style/MainColor"
+                            android:layout_width="180dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="15dp"
+                            android:text="98%"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp">
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:text="交易数量"/>
+                        <TextView
+                            style="@style/MainColor"
+                            android:layout_width="180dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:text="12"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <!-- 和UP主的中间好友 -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="5dp"
-            android:background="#FFFFFF">
-            <TextView
-                style="@style/MainColor"
-                android:layout_width="300dp"
+            <!-- 和UP主的中间好友 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
                 android:layout_height="24dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:text="可联系3位中间好友问询"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="90dp"
-            android:background="#FFFFFF">
-            <ImageView
-                android:layout_height="70dp"
-                android:layout_width="70dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_gravity="left|center"
-                android:src="@drawable/main_hot_head1"/>
-            <ImageView
-                android:layout_height="70dp"
-                android:layout_width="70dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_gravity="left|center"
-                android:src="@drawable/main_hot_head2"/>
-            <ImageView
-                android:layout_height="70dp"
-                android:layout_width="70dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_gravity="left|center"
-                android:src="@drawable/main_hot_head3"/>
-        </LinearLayout>
+                android:background="#FFFFFF">
+                <TextView
+                    style="@style/MainColor"
+                    android:layout_width="300dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="可联系3位中间好友问询"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="90dp"
+                android:background="#FFFFFF">
+                <ImageView
+                    android:layout_height="70dp"
+                    android:layout_width="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="left|center"
+                    android:src="@drawable/main_hot_head1"/>
+                <ImageView
+                    android:layout_height="70dp"
+                    android:layout_width="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="left|center"
+                    android:src="@drawable/main_hot_head2"/>
+                <ImageView
+                    android:layout_height="70dp"
+                    android:layout_width="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="left|center"
+                    android:src="@drawable/main_hot_head3"/>
+            </LinearLayout>
+
+            <!-- 买买买 -->
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="2dp"
+                android:background="#FFFFFF">
+            </LinearLayout>
 
         </LinearLayout>
-        </ScrollView>
+    </ScrollView>
 
-        <!-- 买买买 -->
-        <LinearLayout
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
+    <!-- 顶部选项栏 -->
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#24D5A7">
+        <ImageView
+            android:id="@+id/main_menuicon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top1"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="left|center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="YAYAI KUSAMA"/>
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top2"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="16dp"
+            />
+    </FrameLayout>
+
+    <!-- 买买买 -->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF">
+        <ImageView
+            android:onClick="onClick_Talk"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/main_talk_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="left|center"/>
+        <FrameLayout
+            android:onClick="onClick_Cart"
+            android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginTop="2dp"
-            android:background="#FFFFFF">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/main_talk_icon"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="left|center"/>
-            <FrameLayout
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:background="#4FAFD9">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:textSize="20dp"
-                    android:textColor="#FFFFFF"
-                    android:text="加入购物车"/>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:background="#21D7A7">
-                <TextView
-                    android:id="@+id/main_detail_buy"
-                    android:layout_width="80dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:textSize="20dp"
-                    android:textColor="#FFFFFF"
-                    android:text="立即购买"/>
-            </FrameLayout>
-        </LinearLayout>
-
+            android:background="#4FAFD9">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:text="加入购物车"/>
+        </FrameLayout>
+        <FrameLayout
+            android:onClick="onClick_Buy"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="#21D7A7">
+            <TextView
+                android:id="@+id/main_detail_buy"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:text="立即购买"/>
+        </FrameLayout>
     </LinearLayout>
+
+</RelativeLayout>
 
 

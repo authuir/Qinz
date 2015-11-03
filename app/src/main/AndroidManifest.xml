@@ -21,10 +21,19 @@
         <activity android:name=".MainCartActivity"></activity>
         <activity android:name=".MainReqDetailActivity"></activity>
         <activity android:name=".MainFloatingButtonActivity"></activity>
-        <activity android:name=".DirtActivity"></activity>
-        <activity android:name=".NewsActivity"></activity>
         <activity android:name=".MainRequestActivity"></activity>
+        <activity android:name=".MainUploadActivity"></activity>
+        <activity android:name=".MainSearchActivity"></activity>
+
         <activity android:name=".TestActivity"></activity>
+        <activity android:name=".DirtActivity"></activity>
+
         <activity android:name=".NewsBooklistActivity"></activity>
+        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsTalkActivity"></activity>
+
+        <activity android:name=".PersAct1Activity"></activity>
+        <activity android:name=".PersAct2Activity"></activity>
+        <activity android:name=".PersAct3Activity"></activity>
     </application>
 </manifest>

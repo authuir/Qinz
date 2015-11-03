@@ -1,0 +1,114 @@
+<RelativeLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- 顶部选项栏 -->
+            <FrameLayout
+                android:layout_alignParentTop="true"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="#24D5A7">
+            </FrameLayout>
+
+            <!-- 底部操作栏 -->
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="2dp"
+                android:background="#FFFFFF">
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 顶部选项栏 -->
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#24D5A7">
+        <ImageView
+            android:id="@+id/main_menuicon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top6"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="left|center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="YAYAI KUSAMA"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:src="@drawable/main_top2"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="16dp"
+            />
+    </FrameLayout>
+
+    <!-- 底部操作栏 -->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/main_talk_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="left|center"/>
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="#4FAFD9">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:text="加入购物车"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="#21D7A7">
+            <TextView
+                android:id="@+id/main_detail_buy"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:text="立即购买"/>
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+

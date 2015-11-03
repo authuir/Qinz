@@ -86,8 +86,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    private void InitVal()
-    {
+    private void InitVal(){
         mIcon1 = (ImageView) findViewById(R.id.main_icon1);
         mIcon2 = (ImageView) findViewById(R.id.main_icon2);
         mIcon3 = (ImageView) findViewById(R.id.main_icon3);
@@ -109,11 +108,10 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, NewsBooklistActivity.class);
+                 intent.setClass(MainActivity.this, PersAct1Activity.class);
                  MainActivity.this.startActivity(intent);
                  MainActivity.this.finish();
              }
@@ -256,8 +254,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
-
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mImgleft = (ImageView) super.findViewById(R.id.main_hot_left);
         mImgright = (ImageView) super.findViewById(R.id.main_hot_right);
@@ -350,6 +346,61 @@ public class MainActivity extends ActionBarActivity {
     {
         mainView.setVisibility(View.VISIBLE);
         qml.setView(0);
+    }
+
+    public void onClick_news_frid(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, NewsTalkActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+    public void onClick_act1(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, PersAct1Activity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_act2(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, PersAct2Activity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_act3(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, PersAct3Activity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_BookDetail(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,MainDetailActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_Search(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,MainSearchActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_Hot(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,MainHotActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
     }
 
     public class newsAdapter extends BaseAdapter {
