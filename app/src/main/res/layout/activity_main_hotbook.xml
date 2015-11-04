@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@drawable/main_top1"
+                android:src="@drawable/main_top6"
                 android:layout_marginLeft="16dp"
                 android:layout_gravity="left|center"
                 />
@@ -50,6 +50,7 @@
 
             <ImageView
                 android:layout_width="380dp"
+                android:scaleType="fitXY"
                 android:layout_height="match_parent"
                 android:src="@drawable/main2_img1"
                 android:layout_gravity="center_horizontal|top"
@@ -70,7 +71,7 @@
                 android:layout_marginLeft="38dp"
                 android:textSize="16dp"
                 android:hint="请输入您需要搜索的内容"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -90,8 +91,7 @@
                 android:src="@drawable/main_hot_leftfocus"
                 android:layout_marginLeft="80dp"
                 android:scaleType="centerCrop"
-                android:layout_gravity="left|center"
-                />
+                android:layout_gravity="left|center"/>
             <ImageView
                 android:id="@+id/main_hot_right"
                 android:layout_width="100dp"
@@ -99,8 +99,7 @@
                 android:src="@drawable/main_hot_rightunfocus"
                 android:layout_marginRight="80dp"
                 android:scaleType="centerCrop"
-                android:layout_gravity="right|center"
-                />
+                android:layout_gravity="right|center"/>
             <TextView
                 android:id="@+id/main_hottext_left"
                 android:layout_width="wrap_content"
@@ -143,10 +142,12 @@
                         android:orientation="vertical"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent">
+
                         <FrameLayout
+                            android:onClick="onClick_Detail"
                             android:layout_width="fill_parent"
                             android:layout_height="180dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="2dp"
                             android:background="#FFFFFF">
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -218,9 +219,10 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_Detail"
                             android:layout_width="fill_parent"
                             android:layout_height="180dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="2dp"
                             android:background="#FFFFFF">
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -287,9 +289,10 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_Detail"
                             android:layout_width="fill_parent"
                             android:layout_height="180dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="2dp"
                             android:background="#FFFFFF">
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -361,9 +364,10 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_Detail"
                             android:layout_width="fill_parent"
                             android:layout_height="180dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="2dp"
                             android:background="#FFFFFF">
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -435,9 +439,10 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_Detail"
                             android:layout_width="fill_parent"
                             android:layout_height="180dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="2dp"
                             android:background="#FFFFFF">
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -507,6 +512,7 @@
                                 android:layout_marginRight="3dp"
                                 android:text="租"/>
                         </FrameLayout>
+
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
@@ -700,7 +706,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod1"/>
+                                android:src="@drawable/bookmethod3"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -709,7 +715,7 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="买"/>
+                                android:text="卖"/>
                         </FrameLayout>
 
                     </LinearLayout>

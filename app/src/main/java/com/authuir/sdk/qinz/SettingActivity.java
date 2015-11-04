@@ -22,21 +22,23 @@ import org.w3c.dom.Text;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class MainSearchActivity extends ActionBarActivity {
+public class SettingActivity extends ActionBarActivity {
+
+    ImageView IntoAcicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_search);
+        setContentView(R.layout.activity_setting);
     }
 
     public void onBackPressed() {
         super.onBackPressed();
         //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainSearchActivity.this, MainActivity.class);
-        MainSearchActivity.this.startActivity(intent);
-        MainSearchActivity.this.finish();
+        intent.setClass(SettingActivity.this, MainActivity.class);
+        SettingActivity.this.startActivity(intent);
+        SettingActivity.this.finish();
     }
 
     @Override
@@ -59,13 +61,5 @@ public class MainSearchActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClick_Detail(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainSearchActivity.this,MainDetailActivity.class);
-        MainSearchActivity.this.startActivity(intent);
-        MainSearchActivity.this.finish();
     }
 }

@@ -27,6 +27,7 @@
 
         <activity android:name=".TestActivity"></activity>
         <activity android:name=".DirtActivity"></activity>
+        <activity android:name=".SettingActivity"></activity>
 
         <activity android:name=".NewsBooklistActivity"></activity>
         <activity android:name=".NewsActivity"></activity>

@@ -63,7 +63,7 @@
                 android:background="@color/qinz_dep"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="70dp">
+                android:layout_height="60dp">
                 <ImageView
                     android:id="@+id/mainview_icon"
                     android:layout_width="30dp"
@@ -87,7 +87,7 @@
                 android:id="@+id/fridview_lout"
                 android:layout_width="fill_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_height="70dp">
+                android:layout_height="60dp">
                 <ImageView
                     android:id="@+id/fridview_icon"
                     android:layout_width="30dp"
@@ -111,7 +111,7 @@
                 android:id="@+id/newsview_lout"
                 android:layout_width="fill_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_height="70dp">
+                android:layout_height="60dp">
                 <ImageView
                     android:id="@+id/newsview_icon"
                     android:layout_width="30dp"
@@ -135,7 +135,7 @@
                 android:layout_width="fill_parent"
                 android:id="@+id/persview_lout"
                 android:layout_marginLeft="10dp"
-                android:layout_height="70dp">
+                android:layout_height="60dp">
                 <ImageView
                     android:id="@+id/persview_icon"
                     android:layout_width="30dp"
@@ -152,6 +152,27 @@
                     android:layout_height="wrap_content"
                     android:textSize="16dp"
                     android:text="主页"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="onClick_Setting"
+                android:layout_marginTop="160dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/main_setting"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:textColor="@color/textqml"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:text="设置"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -460,7 +481,7 @@
                                 android:text="书籍"/>
                         </FrameLayout>
                         <FrameLayout style="@style/MainFrame1"
-                            android:onClick="onClick_Hot">
+                            android:onClick="onClick_cat2">
                             <ImageView
                                 android:id="@+id/main_icon2"
                                 style="@style/MainIcon"
@@ -537,22 +558,21 @@
                         android:layout_width="fill_parent"
                         android:layout_height="30dp">
                         <TextView
+                            android:lineSpacingExtra="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
                             android:layout_marginLeft="5dp"
                             android:textColor="#2DD7A6"
                             android:textSize="18dp"
-                            android:layout_gravity="left"
+                            android:layout_gravity="left|center_vertical"
                             android:text="智能推荐"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
                             android:textColor="#2DD7A6"
                             android:textSize="18dp"
-                            android:layout_gravity="right"
+                            android:layout_gravity="right|center_vertical"
                             android:text="更多"/>
                     </FrameLayout>
                     <HorizontalScrollView
@@ -587,13 +607,15 @@
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 有里枝"/>
+                                        android:layout_marginLeft="5dp"
+                                        android:text="有里枝"/>
                                     <TextView
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  12RMB"/>
+                                        android:layout_marginLeft="5dp"
+                                        android:text="书籍    |   12RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
 
@@ -611,17 +633,19 @@
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng2"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 烹"/>
+                                        android:text="烹"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  10RMB"/>
+                                        android:text="书籍    |   10RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
 
@@ -639,17 +663,19 @@
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng3"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 食草家族"/>
+                                        android:text="食草家族"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  15RMB"/>
+                                        android:text="书籍    |   15RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
 
@@ -667,17 +693,19 @@
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng4"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 古都"/>
+                                        android:text="古都"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  12RMB"/>
+                                        android:text="书籍    |   12RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
 
@@ -695,17 +723,19 @@
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng1"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 有里枝"/>
+                                        android:text="有里枝"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  12RMB"/>
+                                        android:text="书籍    |   12RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
 
@@ -723,17 +753,19 @@
                                         android:layout_height="100dp"
                                         android:src="@drawable/mainpng1"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#000000"
                                         android:textSize="12dp"
-                                        android:text=" 有里枝"/>
+                                        android:text="有里枝"/>
                                     <TextView
+                                        android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"
                                         android:layout_height="15dp"
                                         android:textColor="#9B9B9B"
                                         android:textSize="10dp"
-                                        android:text=" 书籍     |  12RMB"/>
+                                        android:text="书籍    |   12RMB"/>
                                 </LinearLayout>
                             </FrameLayout>
                         </LinearLayout>

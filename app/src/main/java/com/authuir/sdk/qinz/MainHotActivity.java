@@ -87,6 +87,14 @@ public class MainHotActivity extends ActionBarActivity {
         MainHotActivity.this.finish();
     }
 
+    public void onClick_Detail(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainHotActivity.this,MainDetailActivity.class);
+        MainHotActivity.this.startActivity(intent);
+        MainHotActivity.this.finish();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

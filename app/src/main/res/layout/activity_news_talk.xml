@@ -26,7 +26,7 @@
 
             <FrameLayout
                 android:layout_width="fill_parent"
-                android:layout_height="80dp">
+                android:layout_height="70dp">
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -60,7 +60,7 @@
 
             <FrameLayout
                 android:layout_width="fill_parent"
-                android:layout_height="80dp">
+                android:layout_height="70dp">
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -94,7 +94,7 @@
 
             <FrameLayout
                 android:layout_width="fill_parent"
-                android:layout_height="80dp">
+                android:layout_height="70dp">
                 <ImageView
 
                     android:layout_width="60dp"
@@ -129,7 +129,7 @@
 
             <FrameLayout
                 android:layout_width="fill_parent"
-                android:layout_height="80dp">
+                android:layout_height="70dp">
                 <ImageView
 
                     android:layout_width="60dp"
@@ -156,10 +156,11 @@
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="约约约，今晚来我的房间，天马大酒店419"/>
+                        android:text="今晚来我的房间，天马大酒店419"/>
                 </FrameLayout>
 
             </FrameLayout>
+
 
             <!-- 底部操作栏 -->
             <LinearLayout
@@ -224,7 +225,7 @@
             android:layout_gravity="center_vertical"
             android:layout_height="40dp">
             <EditText
-                android:id="@+id/nameedit"
+                android:id="@+id/msg"
                 android:textSize="16dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
@@ -236,6 +237,7 @@
                 />
         </FrameLayout>
         <FrameLayout
+            android:onClick="onClick_SendMSG"
             android:layout_width="60dp"
             android:layout_gravity="center_vertical"
             android:layout_height="40dp">

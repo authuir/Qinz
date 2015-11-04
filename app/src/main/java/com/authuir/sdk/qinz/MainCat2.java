@@ -22,21 +22,21 @@ import org.w3c.dom.Text;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class MainSearchActivity extends ActionBarActivity {
+public class MainCat2 extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_search);
+        setContentView(R.layout.activity_cat2);
     }
 
     public void onBackPressed() {
         super.onBackPressed();
         //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainSearchActivity.this, MainActivity.class);
-        MainSearchActivity.this.startActivity(intent);
-        MainSearchActivity.this.finish();
+        intent.setClass(MainCat2.this, MainActivity.class);
+        MainCat2.this.startActivity(intent);
+        MainCat2.this.finish();
     }
 
     @Override
@@ -59,13 +59,5 @@ public class MainSearchActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClick_Detail(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainSearchActivity.this,MainDetailActivity.class);
-        MainSearchActivity.this.startActivity(intent);
-        MainSearchActivity.this.finish();
     }
 }

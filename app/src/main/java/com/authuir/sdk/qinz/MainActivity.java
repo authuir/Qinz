@@ -111,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, PersAct1Activity.class);
+                 intent.setClass(MainActivity.this, MainUploadActivity.class);
                  MainActivity.this.startActivity(intent);
                  MainActivity.this.finish();
              }
@@ -226,7 +226,7 @@ public class MainActivity extends ActionBarActivity {
         mIcon2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, MainFloatingButtonActivity.class);
+                intent.setClass(MainActivity.this, MainHotActivity.class);
                 MainActivity.this.startActivity(intent);
                 MainActivity.this.finish();
             }
@@ -234,7 +234,7 @@ public class MainActivity extends ActionBarActivity {
         mIcon3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, NewsActivity.class);
+                intent.setClass(MainActivity.this, MainHotActivity.class);
                 MainActivity.this.startActivity(intent);
                 MainActivity.this.finish();
             }
@@ -394,6 +394,24 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
     }
+
+    public void onClick_Setting(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,SettingActivity.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+    public void onClick_cat2(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,MainCat2.class);
+        MainActivity.this.startActivity(intent);
+        MainActivity.this.finish();
+    }
+
+
 
     public void onClick_Hot(View v)
     {

@@ -178,6 +178,7 @@
         </LinearLayout>
     </ScrollView>
     <FrameLayout
+        android:onClick=""
         android:layout_alignParentBottom="true"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
