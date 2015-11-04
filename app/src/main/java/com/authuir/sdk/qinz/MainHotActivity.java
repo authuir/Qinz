@@ -102,6 +102,14 @@ public class MainHotActivity extends ActionBarActivity {
         return true;
     }
 
+    public void onClick_Back(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainHotActivity.this,MainActivity.class);
+        MainHotActivity.this.startActivity(intent);
+        MainHotActivity.this.finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

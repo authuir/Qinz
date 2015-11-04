@@ -24,6 +24,7 @@
         <activity android:name=".MainRequestActivity"></activity>
         <activity android:name=".MainUploadActivity"></activity>
         <activity android:name=".MainSearchActivity"></activity>
+        <activity android:name=".MainCat2"></activity>
 
         <activity android:name=".TestActivity"></activity>
         <activity android:name=".DirtActivity"></activity>

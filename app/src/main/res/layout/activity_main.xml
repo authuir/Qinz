@@ -631,7 +631,7 @@
                                         android:onClick="onClick_BookDetail"
                                         android:layout_width="100dp"
                                         android:layout_height="100dp"
-                                        android:src="@drawable/mainpng2"/>
+                                        android:src="@drawable/mainpng5"/>
                                     <TextView
                                         android:layout_marginLeft="5dp"
                                         android:layout_width="100dp"

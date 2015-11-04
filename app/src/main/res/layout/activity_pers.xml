@@ -110,9 +110,9 @@
             <com.astuetz.PagerSlidingTabStrip
                 android:id="@+id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:background="#FE9876" />
-
+                android:layout_height="60dp"
+                android:background="#fefefe" />
+            
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

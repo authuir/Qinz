@@ -59,6 +59,7 @@ public class MainDetailActivity extends ActionBarActivity {
         intent.setClass(MainDetailActivity.this, MainActivity.class);
         MainDetailActivity.this.startActivity(intent);
         MainDetailActivity.this.finish();
+
     }
 
     @Override
@@ -103,6 +104,15 @@ public class MainDetailActivity extends ActionBarActivity {
     {
         Intent intent = new Intent();
         intent.setClass(MainDetailActivity.this,MainVerifyActivity.class);
+        MainDetailActivity.this.startActivity(intent);
+        MainDetailActivity.this.finish();
+    }
+
+    public void onClick_Back(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from","MainDetailActivity");
+        intent.setClass(MainDetailActivity.this,MainActivity.class);
         MainDetailActivity.this.startActivity(intent);
         MainDetailActivity.this.finish();
     }

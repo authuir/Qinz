@@ -152,7 +152,7 @@ public class MainActivity extends ActionBarActivity {
                 switch (index) {
                     case 0:
                         //mAppList.remove(position);
-                        //mAppList.
+                        //mAppList
                         Log.d("TAG", "Init OK."+position);
                         mAppList.remove(position);
                         mAdapter.notifyDataSetChanged();
@@ -300,7 +300,13 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         InitVal();
+        Intent intent = getIntent();
+        String name="fsdf"+intent.getStringExtra("from");
+        Log.e("TAG",name);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -410,8 +416,6 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
     }
-
-
 
     public void onClick_Hot(View v)
     {

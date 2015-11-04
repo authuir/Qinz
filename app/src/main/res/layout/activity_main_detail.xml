@@ -283,10 +283,11 @@
         android:layout_height="48dp"
         android:background="#24D5A7">
         <ImageView
+            android:onClick="onClick_Back"
             android:id="@+id/main_menuicon"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:src="@drawable/main_top1"
+            android:src="@drawable/main_top6"
             android:layout_marginLeft="16dp"
             android:layout_gravity="left|center"
             />
@@ -298,7 +299,7 @@
             android:layout_gravity="center"
             android:text="YAYAI KUSAMA"/>
         <ImageView
-            android:layout_width="22dp"
+            android:layout_width="0dp"
             android:layout_height="22dp"
             android:src="@drawable/main_top2"
             android:layout_gravity="right|center"

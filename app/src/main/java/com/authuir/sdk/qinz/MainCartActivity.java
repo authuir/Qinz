@@ -247,4 +247,13 @@ public class MainCartActivity extends ActionBarActivity {
                 getResources().getDisplayMetrics());
     }
 
+    public void onClick_Back(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from","MainCartActivity");
+        intent.setClass(MainCartActivity.this,MainActivity.class);
+        MainCartActivity.this.startActivity(intent);
+        MainCartActivity.this.finish();
+    }
+
 }
