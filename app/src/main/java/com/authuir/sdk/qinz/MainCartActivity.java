@@ -181,12 +181,9 @@ public class MainCartActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainCartActivity.this, MainActivity.class);
-        MainCartActivity.this.startActivity(intent);
-        MainCartActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -249,11 +246,9 @@ public class MainCartActivity extends ActionBarActivity {
 
     public void onClick_Back(View v)
     {
-        Intent intent = new Intent();
-        intent.putExtra("from","MainCartActivity");
-        intent.setClass(MainCartActivity.this,MainActivity.class);
-        MainCartActivity.this.startActivity(intent);
-        MainCartActivity.this.finish();
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 
 }

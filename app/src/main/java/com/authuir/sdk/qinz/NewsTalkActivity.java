@@ -72,12 +72,9 @@ public class NewsTalkActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(NewsTalkActivity.this, MainActivity.class);
-        NewsTalkActivity.this.startActivity(intent);
-        NewsTalkActivity.this.finish();
+        finish();
     }
 
     @Override

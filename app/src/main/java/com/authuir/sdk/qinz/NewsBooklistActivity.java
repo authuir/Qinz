@@ -172,12 +172,9 @@ public class NewsBooklistActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(NewsBooklistActivity.this, MainActivity.class);
-        NewsBooklistActivity.this.startActivity(intent);
-        NewsBooklistActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -236,5 +233,12 @@ public class NewsBooklistActivity extends ActionBarActivity {
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 getResources().getDisplayMetrics());
+    }
+
+    public void onClick_Back(View v)
+    {
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 }

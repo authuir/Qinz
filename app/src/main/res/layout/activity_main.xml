@@ -177,7 +177,6 @@
 
         </LinearLayout>
 
-
     </FrameLayout>
 
     <RelativeLayout
@@ -206,6 +205,7 @@
                     android:layout_height="48dp"
                     android:background="#24D5A7">
                     <ImageView
+                        android:onClick="onClick_Menu"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@drawable/main_top1"
@@ -220,7 +220,7 @@
                         android:layout_gravity="center"
                         android:text="消息"/>
                     <ImageView
-                        android:layout_width="22dp"
+                        android:layout_width="0dp"
                         android:layout_height="22dp"
                         android:src="@drawable/main_top2"
                         android:layout_gravity="right|center"
@@ -363,6 +363,7 @@
                                 </FrameLayout>
 
                                 <FrameLayout
+                                    android:onClick="onClick_news_frid"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="3dp"

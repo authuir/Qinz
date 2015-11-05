@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,10 +22,17 @@ public class MainHotActivity extends ActionBarActivity {
     private ImageView mImgleft = null,mImgright = null;
     private TextView mTextleft = null,mTextright = null;
 
+    private String BackActivity = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hotbook);
+
+        Intent intent = getIntent();
+        BackActivity = intent.getStringExtra("from");
+        if (BackActivity!=null)
+            Log.e("TAG",BackActivity);
 
         mReqHead = (ImageView) findViewById(R.id.request1);
 
@@ -79,20 +87,27 @@ public class MainHotActivity extends ActionBarActivity {
         mTabHost.setCurrentTab(0);
     }
 
+
     public void onBackPressed() {
+        Log.e("TAG", "BACK");
+        setResult(1);
         super.onBackPressed();
-        Intent intent = new Intent();
-        intent.setClass(MainHotActivity.this, MainActivity.class);
-        MainHotActivity.this.startActivity(intent);
-        MainHotActivity.this.finish();
+        finish();
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        Log.d("TAG", "Catch");
+    }
+
 
     public void onClick_Detail(View v)
     {
+        Log.e("TAG", "CLICK");
         Intent intent = new Intent();
-        intent.setClass(MainHotActivity.this,MainDetailActivity.class);
-        MainHotActivity.this.startActivity(intent);
-        MainHotActivity.this.finish();
+        intent.setClass(MainHotActivity.this, MainDetailActivity.class);
+        MainHotActivity.this.startActivityForResult(intent, 0);
+        //MainHotActivity.this.finish();
     }
 
     @Override

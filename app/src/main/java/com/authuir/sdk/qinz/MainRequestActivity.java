@@ -31,12 +31,9 @@ public class MainRequestActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainRequestActivity.this, MainActivity.class);
-        MainRequestActivity.this.startActivity(intent);
-        MainRequestActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -59,5 +56,12 @@ public class MainRequestActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick_Back(View v)
+    {
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 }

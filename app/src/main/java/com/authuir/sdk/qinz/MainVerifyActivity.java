@@ -35,19 +35,16 @@ public class MainVerifyActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainVerifyActivity.this, MainCartActivity.class);
-                MainVerifyActivity.this.startActivity(intent);
-                MainVerifyActivity.this.finish();
+                MainVerifyActivity.this.startActivityForResult(intent, 0);
             }
         });
     }
 
     public void onBackPressed() {
+        setResult(1);
+        Log.e("TAG", "PPP");
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainVerifyActivity.this, MainActivity.class);
-        MainVerifyActivity.this.startActivity(intent);
-        MainVerifyActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -70,5 +67,20 @@ public class MainVerifyActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick_Back(View v)
+    {
+        setResult(1);
+        super.onBackPressed();
+        finish();
+    }
+
+    public void onClick_Talk(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainVerifyActivity.this, NewsTalkActivity.class);
+        MainVerifyActivity.this.startActivityForResult(intent, 0);
     }
 }

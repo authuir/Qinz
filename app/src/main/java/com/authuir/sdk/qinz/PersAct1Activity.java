@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class PersAct1Activity extends ActionBarActivity {
@@ -44,5 +45,15 @@ public class PersAct1Activity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick_Back(View v)
+    {
+        super.onBackPressed();
+        //System.out.println("按下了back键   onBackPressed()");
+        Intent intent = new Intent();
+        intent.setClass(PersAct1Activity.this, MainActivity.class);
+        PersAct1Activity.this.startActivity(intent);
+        PersAct1Activity.this.finish();
     }
 }

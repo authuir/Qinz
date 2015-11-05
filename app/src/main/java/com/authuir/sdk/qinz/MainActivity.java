@@ -40,6 +40,8 @@ public class MainActivity extends ActionBarActivity {
         lmain, lfrid, lnews, lpers
     }
 
+    private Class<?> Backto;
+
     private ImageView mIcon1 = null,mIcon2 = null,mIcon3 = null;
     private ImageView mIconmenu = null;
     private ImageView mBookIcon1 = null;
@@ -103,8 +105,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, MainRequestActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent, 0);
             }
         });
 
@@ -112,8 +113,7 @@ public class MainActivity extends ActionBarActivity {
              public void onClick(View v) {
                  Intent intent = new Intent();
                  intent.setClass(MainActivity.this, MainUploadActivity.class);
-                 MainActivity.this.startActivity(intent);
-                 MainActivity.this.finish();
+                 MainActivity.this.startActivityForResult(intent, 0);
              }
         });
 
@@ -206,8 +206,7 @@ public class MainActivity extends ActionBarActivity {
             {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, NewsBooklistActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent, 0);
             }
         });
 
@@ -218,25 +217,28 @@ public class MainActivity extends ActionBarActivity {
         mIcon1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
+                intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
                 intent.setClass(MainActivity.this, MainHotActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent, 0);
+                //MainActivity.this.finish();
             }
         });
         mIcon2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
+                intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
                 intent.setClass(MainActivity.this, MainHotActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent,0);
+                //MainActivity.this.finish();
             }
         });
         mIcon3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
+                intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
                 intent.setClass(MainActivity.this, MainHotActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent,0);
+                //MainActivity.this.finish();
             }
         });
         mIconmenu.setOnClickListener(new View.OnClickListener() {
@@ -249,8 +251,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, MainDetailActivity.class);
-                MainActivity.this.startActivity(intent);
-                MainActivity.this.finish();
+                MainActivity.this.startActivityForResult(intent, 0);
             }
         });
 
@@ -301,12 +302,12 @@ public class MainActivity extends ActionBarActivity {
 
         InitVal();
         Intent intent = getIntent();
-        String name="fsdf"+intent.getStringExtra("from");
+        String name="FROM:"+intent.getStringExtra("from");
+        String BACK = intent.getStringExtra("from");
         Log.e("TAG",name);
-
+        if (BACK!=null)
+            Log.e("TAG",BACK);
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -357,13 +358,14 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_news_frid(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, NewsTalkActivity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        MainActivity.this.startActivityForResult(intent, 0);
     }
     public void onClick_act1(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct1Activity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -372,6 +374,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_act2(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct2Activity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -380,6 +383,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_act3(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct3Activity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -388,6 +392,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_BookDetail(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this,MainDetailActivity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -396,6 +401,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_Search(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this,MainSearchActivity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -404,6 +410,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_Setting(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this,SettingActivity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -412,6 +419,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_cat2(View v)
     {
         Intent intent = new Intent();
+        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this,MainCat2.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
@@ -420,9 +428,14 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_Hot(View v)
     {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this,MainHotActivity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, MainHotActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Menu(View v) {
+        Log.d("TAG", "book click");
+        residelout.smoothSlideTo(1.f);
     }
 
     public class newsAdapter extends BaseAdapter {

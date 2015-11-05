@@ -18,6 +18,7 @@
             android:layout_height="48dp"
             android:background="#24D5A7">
             <ImageView
+                android:onClick="onClick_Back"
                 android:id="@+id/main_menuicon"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
@@ -363,6 +364,7 @@
             android:layout_marginTop="2dp"
             android:background="#FFFFFF">
             <ImageView
+                android:onClick="onClick_Talk"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/main_talk_icon"

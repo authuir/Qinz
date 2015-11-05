@@ -31,12 +31,9 @@ public class MainUploadActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainUploadActivity.this, MainActivity.class);
-        MainUploadActivity.this.startActivity(intent);
-        MainUploadActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -59,5 +56,12 @@ public class MainUploadActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick_Back(View v)
+    {
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 }
