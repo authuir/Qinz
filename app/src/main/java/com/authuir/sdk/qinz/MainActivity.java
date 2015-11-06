@@ -411,7 +411,7 @@ public class MainActivity extends ActionBarActivity {
     {
         Intent intent = new Intent();
         intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(MainActivity.this,SettingActivity.class);
+        intent.setClass(MainActivity.this,PersActivity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
     }
