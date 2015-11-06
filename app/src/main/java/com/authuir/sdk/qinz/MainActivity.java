@@ -5,8 +5,13 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +30,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
@@ -52,6 +58,7 @@ public class MainActivity extends ActionBarActivity {
     private ScrollView mainView = null;
 
     private ResideLayout residelout = null;
+    private LinearLayout persLayout = null;
 
     private TabHost mTabHost = null;
     private TabWidget mTabWidget = null;
@@ -64,6 +71,10 @@ public class MainActivity extends ActionBarActivity {
     private SwipeMenuListView mListView ;
     private List<CartList> mAppList ;
     private newsAdapter mAdapter ;
+
+    private PagerSlidingTabStrip tabs;
+    private ViewPager pager;
+    private MyPagerAdapter adapter;
 
     private class CartList{
         public String GoodsName;
@@ -89,6 +100,18 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void InitVal(){
+
+        tabs = (PagerSlidingTabStrip) findViewById(R.id.tabstrip);
+        pager = (ViewPager) findViewById(R.id.pager);
+        adapter = new MyPagerAdapter(getSupportFragmentManager());
+
+        pager.setAdapter(adapter);
+        tabs.setViewPager(pager);
+
+        persLayout = (LinearLayout) findViewById(R.id.pers);
+ //       persLayout.setVisibility(View.INVISIBLE);
+        persLayout.setEnabled(false);
+
         mIcon1 = (ImageView) findViewById(R.id.main_icon1);
         mIcon2 = (ImageView) findViewById(R.id.main_icon2);
         mIcon3 = (ImageView) findViewById(R.id.main_icon3);
@@ -304,9 +327,11 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = getIntent();
         String name="FROM:"+intent.getStringExtra("from");
         String BACK = intent.getStringExtra("from");
-        Log.e("TAG",name);
+        Log.e("TAG", name);
         if (BACK!=null)
             Log.e("TAG",BACK);
+
+
     }
 
     @Override
@@ -333,13 +358,16 @@ public class MainActivity extends ActionBarActivity {
 
     public void onClick_ML_persview(View v)
     {
+        persLayout.setEnabled(true);
         mainView.setVisibility(View.INVISIBLE);
+   //     persLayout.setVisibility(View.VISIBLE);
         qml.setView(3);
     }
 
     public void onClick_ML_newsview(View v)
     {
         mainView.setVisibility(View.INVISIBLE);
+        persLayout.setVisibility(View.INVISIBLE);
         qml.setView(2);
     }
 
@@ -410,10 +438,8 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_Setting(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(MainActivity.this,PersActivity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        intent.setClass(MainActivity.this, PersActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_cat2(View v)
@@ -617,5 +643,29 @@ public class MainActivity extends ActionBarActivity {
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 getResources().getDisplayMetrics());
+    }
+
+    public class MyPagerAdapter extends FragmentPagerAdapter {
+
+        private final String[] TITLES = { "     我的物品     ", "        心愿单        ", "     任务活动     " };
+
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return TITLES[position];
+        }
+
+        @Override
+        public int getCount() {
+            return TITLES.length;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return SuperAwesomeCardFragment.newInstance(position);
+        }
     }
 }

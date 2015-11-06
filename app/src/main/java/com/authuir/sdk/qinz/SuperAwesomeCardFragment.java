@@ -2,14 +2,9 @@ package com.authuir.sdk.qinz;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import android.widget.TextView;
 
 public class SuperAwesomeCardFragment extends Fragment {
 
@@ -34,25 +29,15 @@ public class SuperAwesomeCardFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view;
+        if (position == 1 )
+            view = inflater.inflate(R.layout.item_frame_pers2, container, false);
+        else if (position == 2)
+            view = inflater.inflate(R.layout.item_frame_pers3, container, false);
+        else
+            view = inflater.inflate(R.layout.item_frame_pers1, container, false);
 
-        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-
-        FrameLayout fl = new FrameLayout(getActivity());
-        fl.setLayoutParams(params);
-
-        final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources()
-                .getDisplayMetrics());
-
-        TextView v = new TextView(getActivity());
-        params.setMargins(margin, margin, margin, margin);
-        v.setLayoutParams(params);
-        v.setLayoutParams(params);
-        v.setGravity(Gravity.CENTER);
-        //v.setBackgroundResource(R.drawable.main_head1);
-        v.setText("CARD " + (position + 1));
-
-        fl.addView(v);
-        return fl;
+        return view;
     }
 
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Qinz_GIT.iml" filepath="$PROJECT_DIR$/Qinz_GIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Qinz.iml" filepath="$PROJECT_DIR$/Qinz.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fabbtn/fabbtn.iml" filepath="$PROJECT_DIR$/fabbtn/fabbtn.iml" />
     </modules>
