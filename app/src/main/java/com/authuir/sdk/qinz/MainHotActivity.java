@@ -119,10 +119,10 @@ public class MainHotActivity extends ActionBarActivity {
 
     public void onClick_Back(View v)
     {
-        Intent intent = new Intent();
-        intent.setClass(MainHotActivity.this,MainActivity.class);
-        MainHotActivity.this.startActivity(intent);
-        MainHotActivity.this.finish();
+        Log.e("TAG", "BACK");
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 
     @Override

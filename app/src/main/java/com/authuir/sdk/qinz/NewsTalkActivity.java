@@ -58,20 +58,16 @@ public class NewsTalkActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_talk);
-/*
-        mListView = (ListView) findViewById(R.id.Talklistview);
-        mAppList = new ArrayList<TalkList>();
-        mAdapter= new AppAdapter(this);
 
-        TalkList data1 = new TalkList(),data2 = new TalkList();
-
-        mAppList.add(data1);
-        mAppList.add(data2);
-
-        mListView.setAdapter(mAdapter);*/
     }
 
     public void onBackPressed() {
+        setResult(1);
+        super.onBackPressed();
+        finish();
+    }
+
+    public void onClickBack(View v) {
         setResult(1);
         super.onBackPressed();
         finish();

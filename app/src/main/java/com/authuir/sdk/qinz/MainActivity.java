@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
@@ -59,6 +60,8 @@ public class MainActivity extends ActionBarActivity {
 
     private ResideLayout residelout = null;
     private LinearLayout persLayout = null;
+    private LinearLayout newsLayout = null;
+    private LinearLayout fridLayout = null;
 
     private TabHost mTabHost = null;
     private TabWidget mTabWidget = null;
@@ -109,8 +112,14 @@ public class MainActivity extends ActionBarActivity {
         tabs.setViewPager(pager);
 
         persLayout = (LinearLayout) findViewById(R.id.pers);
- //       persLayout.setVisibility(View.INVISIBLE);
-        persLayout.setEnabled(false);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        persLayout.setLayoutParams(params);
+
+        newsLayout = (LinearLayout) findViewById(R.id.news);
+        newsLayout.setLayoutParams(params);
+
+        fridLayout = (LinearLayout) findViewById(R.id.frid);
+        fridLayout.setLayoutParams(params);
 
         mIcon1 = (ImageView) findViewById(R.id.main_icon1);
         mIcon2 = (ImageView) findViewById(R.id.main_icon2);
@@ -358,29 +367,65 @@ public class MainActivity extends ActionBarActivity {
 
     public void onClick_ML_persview(View v)
     {
-        persLayout.setEnabled(true);
         mainView.setVisibility(View.INVISIBLE);
-   //     persLayout.setVisibility(View.VISIBLE);
+
+        //使能pers
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        persLayout.setLayoutParams(params);
+
+        //禁用news,frid
+        params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        newsLayout.setLayoutParams(params);
+        fridLayout.setLayoutParams(params);
+
         qml.setView(3);
+        Log.d("TAG","Pers");
     }
 
     public void onClick_ML_newsview(View v)
     {
         mainView.setVisibility(View.INVISIBLE);
-        persLayout.setVisibility(View.INVISIBLE);
+
+        //使能news
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        newsLayout.setLayoutParams(params);
+
+        //禁用pers,frid
+        params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        persLayout.setLayoutParams(params);
+        fridLayout.setLayoutParams(params);
+
         qml.setView(2);
+        Log.d("TAG", "News");
     }
 
     public void onClick_ML_fridview(View v)
     {
         mainView.setVisibility(View.INVISIBLE);
+
+        //使能news
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        fridLayout.setLayoutParams(params);
+
+        //禁用pers,frid
+        params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        persLayout.setLayoutParams(params);
+        newsLayout.setLayoutParams(params);
+
         qml.setView(1);
+        Log.d("TAG", "Frid");
     }
 
     public void onClick_ML_mainview(View v)
     {
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        persLayout.setLayoutParams(params);
+        newsLayout.setLayoutParams(params);
+        fridLayout.setLayoutParams(params);
+
         mainView.setVisibility(View.VISIBLE);
         qml.setView(0);
+        Log.d("TAG", "Main");
     }
 
     public void onClick_news_frid(View v)
@@ -397,6 +442,14 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, PersAct1Activity.class);
         MainActivity.this.startActivity(intent);
         MainActivity.this.finish();
+    }
+
+    public void onClick_Talk(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, NewsTalkActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_act2(View v)
@@ -438,7 +491,14 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_Setting(View v)
     {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, PersActivity.class);
+        intent.setClass(MainActivity.this, SettingActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Frid_main(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, FridMainActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
 

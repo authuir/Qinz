@@ -62,4 +62,13 @@ public class SettingActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onClick_Back(View v)
+    {
+        Log.e("TAG", "BACK");
+        setResult(1);
+        super.onBackPressed();
+        finish();
+    }
+
 }

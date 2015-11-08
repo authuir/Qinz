@@ -34,9 +34,9 @@
                 android:layout_gravity="center"
                 android:text="书籍"/>
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/main_top2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/main_top5"
                 android:layout_gravity="right|center"
                 android:layout_marginRight="16dp"/>
         </FrameLayout>

@@ -56,4 +56,21 @@ public class PersAct1Activity extends ActionBarActivity {
         PersAct1Activity.this.startActivity(intent);
         PersAct1Activity.this.finish();
     }
+
+    public void onClick_Buy(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(PersAct1Activity.this, MainUploadActivity.class);
+        PersAct1Activity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Sell(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(PersAct1Activity.this, MainRequestActivity.class);
+        PersAct1Activity.this.startActivityForResult(intent, 0);
+    }
+
 }

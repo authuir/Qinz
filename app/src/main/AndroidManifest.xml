@@ -38,5 +38,7 @@
         <activity android:name=".PersAct1Activity"></activity>
         <activity android:name=".PersAct2Activity"></activity>
         <activity android:name=".PersAct3Activity"></activity>
+
+        <activity android:name=".FridMainActivity"></activity>
     </application>
 </manifest>
