@@ -55,7 +55,6 @@
                 android:layout_gravity="center_horizontal|top"
                 />
             <ImageView
-
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/main_searchicon"
