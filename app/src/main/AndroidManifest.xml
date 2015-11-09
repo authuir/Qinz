@@ -41,6 +41,6 @@
         <activity android:name=".PersAct3Activity"></activity>
 
         <activity android:name=".FridMainActivity"></activity>
-
+        <activity android:name=".LoginActivity"></activity>
     </application>
 </manifest>

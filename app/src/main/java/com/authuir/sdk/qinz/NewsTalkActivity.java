@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -35,30 +36,62 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class NewsTalkActivity extends ActionBarActivity {
 
-    private class TalkList{
-        public String SpeakerName;
-        public String TalkDetail;
-        public TalkList()
+    private class MsgBox{
+        public String Name;
+        public String Detail;
+        public MsgBox()
         {
-            SpeakerName = "立正";
-            TalkDetail = "约约约";
+            Name = "";
+            Detail = "est";
         }
-        public TalkList(String title,String detail)
+        public MsgBox(String msg)
         {
-            SpeakerName = title;
-            TalkDetail = detail;
+            Name = "";
+            Detail = msg;
         }
     }
 
-    private ListView mListView ;
-    private List<TalkList> mAppList ;
-    private AppAdapter mAdapter ;
+    private TalkAdapter mAdapter ;
+
+    private static final String[] strs = new String[] {
+        "first", "second", "third", "fourth", "fifth"
+    };
+
+    private ListView lv;
+    private List<MsgBox> mAppList = null ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_talk);
 
+        mAdapter= new TalkAdapter(this);
+        mAppList = new ArrayList<MsgBox>();
+
+        MsgBox data1 = new MsgBox(),data2 = new MsgBox("测试测试测试");
+
+        mAppList.add(data1);
+        mAppList.add(data2);
+
+        lv = (ListView) findViewById(R.id.lv);
+        lv.setDividerHeight(0);
+        lv.setAdapter(mAdapter);
+    }
+
+    public void onClick_FridMain(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(NewsTalkActivity.this, FridMainActivity.class);
+        NewsTalkActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_PersMain(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(NewsTalkActivity.this, PersActivity.class);
+        NewsTalkActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onBackPressed() {
@@ -75,19 +108,12 @@ public class NewsTalkActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -99,12 +125,16 @@ public class NewsTalkActivity extends ActionBarActivity {
     {
         EditText MsgBox = (EditText) findViewById(R.id.msg);
         String msg = MsgBox.getText().toString();
+        MsgBox.setText("");
+        MsgBox data = new MsgBox(msg);
+        mAppList.add(data);
+        mAdapter.notifyDataSetChanged();
         Log.d("TAG",msg);
     }
 
-    public class AppAdapter extends BaseAdapter {
+    public class TalkAdapter extends BaseAdapter {
 
-        public AppAdapter(Context context) {
+        public TalkAdapter(Context context) {
             super();
         }
 
@@ -114,7 +144,7 @@ public class NewsTalkActivity extends ActionBarActivity {
         }
 
         @Override
-        public TalkList getItem(int position) {
+        public MsgBox getItem(int position) {
             return mAppList.get(position);
         }
 
@@ -126,10 +156,23 @@ public class NewsTalkActivity extends ActionBarActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                convertView = View.inflate(getApplicationContext(),R.layout.item_list_cart, null);
+                convertView = View.inflate(getApplicationContext(),R.layout.item_pers_talk, null);
+                new ViewHolder(convertView);
             }
-            TalkList item = getItem(position);
+            ViewHolder holder = (ViewHolder) convertView.getTag();
+            MsgBox item = getItem(position);
+            holder.tv_title.setText(mAppList.get(position).Detail);
             return convertView;
+        }
+
+        class ViewHolder {
+            TextView tv_title;
+
+            public ViewHolder(View view) {
+                tv_title = (TextView) view.findViewById(R.id.msgdetail);
+                view.setTag(this);
+            }
+
         }
     }
 }

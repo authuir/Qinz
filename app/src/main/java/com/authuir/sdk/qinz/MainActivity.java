@@ -144,7 +144,8 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, MainUploadActivity.class);
+                 intent.setClass(MainActivity.this, LoginActivity.class);
+                 //intent.setClass(MainActivity.this, MainUploadActivity.class);
                  MainActivity.this.startActivityForResult(intent, 0);
              }
         });
@@ -543,10 +544,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public class newsAdapter extends BaseAdapter {
-
-
         private Context context;//用于接收传递过来的Context对象
-
 
         public newsAdapter(Context context) {
             super();

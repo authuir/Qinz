@@ -98,6 +98,13 @@ public class PersActivity extends ActionBarActivity {
         PersActivity.this.startActivityForResult(intent, 0);
     }
 
+    public void onClick_sell(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(PersActivity.this, MainUploadActivity.class);
+        PersActivity.this.startActivityForResult(intent, 0);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

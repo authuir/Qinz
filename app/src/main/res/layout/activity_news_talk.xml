@@ -9,7 +9,7 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:scrollbars="vertical">
         <LinearLayout
             android:orientation="vertical"
@@ -28,13 +28,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="70dp">
                 <ImageView
+                    android:onClick="onClick_FridMain"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:src="@drawable/main_hot_head1"/>
                 <ImageView
-
                     android:layout_width="170dp"
                     android:layout_height="50dp"
                     android:scaleType="fitXY"
@@ -62,6 +62,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="70dp">
                 <ImageView
+                    android:onClick="onClick_FridMain"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical"
@@ -96,12 +97,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="70dp">
                 <ImageView
-
+                    android:onClick="onClick_PersMain"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
-                    android:src="@drawable/main_hot_head2"/>
+                    android:src="@drawable/main_head1"/>
                 <ImageView
 
                     android:layout_width="170dp"
@@ -131,12 +132,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="70dp">
                 <ImageView
-
+                    android:onClick="onClick_PersMain"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="15dp"
-                    android:src="@drawable/main_hot_head2"/>
+                    android:src="@drawable/main_head1"/>
                 <ImageView
 
                     android:layout_width="170dp"
@@ -156,11 +157,16 @@
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="今晚来我的房间，天马大酒店419"/>
+                        android:text="今晚来我的房间，天马大酒店420"/>
                 </FrameLayout>
 
             </FrameLayout>
 
+            <ListView
+                android:id="@+id/lv"
+                android:cacheColorHint="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="400dp" />
 
             <!-- 底部操作栏 -->
             <LinearLayout
@@ -169,8 +175,8 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:background="#FFFFFF">
-
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -195,7 +201,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp"
             android:layout_gravity="center"
-            android:text="立正"/>
+            android:text="阿狸"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_height="22dp"
