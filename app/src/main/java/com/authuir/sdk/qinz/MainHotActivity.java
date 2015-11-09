@@ -5,10 +5,13 @@ import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -24,10 +27,19 @@ public class MainHotActivity extends ActionBarActivity {
 
     private String BackActivity = null;
 
+
+    LinearLayout floatingArea = null;
+
+    boolean is_showed = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hotbook);
+
+        floatingArea = (LinearLayout) findViewById(R.id.fltarea);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        floatingArea.setLayoutParams(params);
 
         Intent intent = getIntent();
         BackActivity = intent.getStringExtra("from");
@@ -143,5 +155,24 @@ public class MainHotActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick_Search(View v)
+    {
+        if (is_showed)
+        {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+            floatingArea.setLayoutParams(params);
+            is_showed = false;
+        } else {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(130));
+            floatingArea.setLayoutParams(params);
+            is_showed = true;
+        }
+
+    }
+    private int dp2px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+                getResources().getDisplayMetrics());
     }
 }

@@ -520,6 +520,7 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.this.startActivityForResult(intent, 0);
     }
 
+
     public void onClick_Menu(View v) {
         Log.d("TAG", "book click");
         residelout.smoothSlideTo(1.f);
@@ -530,6 +531,14 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent();
         intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersOrderActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Cart(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, MainCartActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
 

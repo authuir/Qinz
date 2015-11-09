@@ -11,10 +11,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -28,6 +30,7 @@ public class MainDetailActivity extends ActionBarActivity {
 
     private TextView buybtn = null;
     private String BackActivity = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +116,7 @@ public class MainDetailActivity extends ActionBarActivity {
     {
         Intent intent = new Intent();
         intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-        Log.e("TAG","PPP");
+        Log.e("TAG", "PPP");
         intent.setClass(MainDetailActivity.this, MainVerifyActivity.class);
         MainDetailActivity.this.startActivityForResult(intent, 0);
     }
@@ -129,5 +132,6 @@ public class MainDetailActivity extends ActionBarActivity {
     {
         Log.d("TAG", "Catch");
     }
+
 
 }
