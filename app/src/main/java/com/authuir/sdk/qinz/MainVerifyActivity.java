@@ -47,6 +47,20 @@ public class MainVerifyActivity extends ActionBarActivity {
         finish();
     }
 
+    public void onClick_Cart(View v) {
+        Intent intent = new Intent();
+        intent.setClass(MainVerifyActivity.this, MainCartActivity.class);
+        MainVerifyActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Detail(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainVerifyActivity.this, MainDetailActivity.class);
+        MainVerifyActivity.this.startActivityForResult(intent, 0);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

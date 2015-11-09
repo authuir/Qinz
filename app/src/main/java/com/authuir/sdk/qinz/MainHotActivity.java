@@ -71,9 +71,8 @@ public class MainHotActivity extends ActionBarActivity {
         mReqHead.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainHotActivity.this, MainReqDetailActivity.class);
-                MainHotActivity.this.startActivity(intent);
-                MainHotActivity.this.finish();
+                intent.setClass(MainHotActivity.this, FridMainActivity.class);
+                MainHotActivity.this.startActivityForResult(intent, 0);
             }
         });
 
@@ -100,6 +99,12 @@ public class MainHotActivity extends ActionBarActivity {
         Log.d("TAG", "Catch");
     }
 
+    public void onClick_ReqDetail(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainHotActivity.this, MainReqDetailActivity.class);
+        MainHotActivity.this.startActivityForResult(intent, 0);
+    }
 
     public void onClick_Detail(View v)
     {

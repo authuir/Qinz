@@ -59,21 +59,9 @@ public class MainDetailActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
-        Log.e("TAG", "BACK");
         setResult(1);
         super.onBackPressed();
         finish();
-        //System.out.println("按下了back键   onBackPressed()");
-        /*Intent intent = new Intent();
-        if (BackActivity!=null) {
-            Log.e("TAG",BackActivity);
-            intent.setClassName(MainDetailActivity.this, BackActivity);
-        }
-        else
-            intent.setClass(MainDetailActivity.this, MainActivity.class);
-        MainDetailActivity.this.startActivity(intent);*/
-
-        //MainDetailActivity.this.finish();
     }
 
     @Override
@@ -103,6 +91,13 @@ public class MainDetailActivity extends ActionBarActivity {
         Intent intent = new Intent();
         intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainDetailActivity.this, NewsTalkActivity.class);
+        MainDetailActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_PersMain(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainDetailActivity.this, FridMainActivity.class);
         MainDetailActivity.this.startActivityForResult(intent, 0);
     }
 

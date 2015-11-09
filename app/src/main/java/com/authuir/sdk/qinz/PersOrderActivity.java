@@ -35,8 +35,7 @@ import org.w3c.dom.Text;
 
 import me.relex.circleindicator.CircleIndicator;
 
-
-public class PersActivity extends ActionBarActivity {
+public class PersOrderActivity extends ActionBarActivity {
 
     private final Handler handler = new Handler();
 
@@ -44,13 +43,10 @@ public class PersActivity extends ActionBarActivity {
     private ViewPager pager;
     private MyPagerAdapter adapter;
 
-    private Drawable oldBackground = null;
-    private int currentColor = 0xFF666666;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pers);
+        setContentView(R.layout.activity_pers_order);
 
         tabs = (PagerSlidingTabStrip) findViewById(R.id.tabstrip);
         pager = (ViewPager) findViewById(R.id.pager);
@@ -62,7 +58,7 @@ public class PersActivity extends ActionBarActivity {
 
     public class MyPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "     我的物品     ", "        心愿单        ", "     任务活动     " };
+        private final String[] TITLES = { "    全部    ", "      待交易      ", "   待收货   " , "   待评价   "};
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -80,7 +76,7 @@ public class PersActivity extends ActionBarActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return SuperAwesomeCardFragment.newInstance(position);
+            return PersOrderFragement.newInstance(position);
         }
     }
 
@@ -90,33 +86,10 @@ public class PersActivity extends ActionBarActivity {
         finish();
     }
 
-    public void onClick_Order(View v)
-    {
-        Intent intent = new Intent();
-        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(PersActivity.this, PersOrderActivity.class);
-        PersActivity.this.startActivityForResult(intent, 0);
+    public void onClick_Back(View v) {
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -20,6 +20,7 @@
             android:layout_height="48dp"
             android:background="#24D5A7">
             <ImageView
+                android:onClick="onClick_Back"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/main_top6"

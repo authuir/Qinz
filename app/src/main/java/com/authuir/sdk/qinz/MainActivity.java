@@ -438,10 +438,9 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_act1(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct1Activity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_Talk(View v)
@@ -455,37 +454,33 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_act2(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct2Activity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_act3(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
         intent.setClass(MainActivity.this, PersAct3Activity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_BookDetail(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(MainActivity.this,MainDetailActivity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, MainDetailActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_Search(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(MainActivity.this,MainSearchActivity.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, MainSearchActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_Setting(View v)
@@ -505,10 +500,8 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_cat2(View v)
     {
         Intent intent = new Intent();
-        intent.putExtra("from","com.authuir.sdk.qinz.MainActivity");
-        intent.setClass(MainActivity.this,MainCat2.class);
-        MainActivity.this.startActivity(intent);
-        MainActivity.this.finish();
+        intent.setClass(MainActivity.this, MainCat2.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_Hot(View v)
@@ -519,9 +512,25 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.this.startActivityForResult(intent, 0);
     }
 
+    public void onClick_sell(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, MainUploadActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
     public void onClick_Menu(View v) {
         Log.d("TAG", "book click");
         residelout.smoothSlideTo(1.f);
+    }
+
+    public void onClick_Order(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainActivity.this, PersOrderActivity.class);
+        MainActivity.this.startActivityForResult(intent, 0);
     }
 
     public class newsAdapter extends BaseAdapter {

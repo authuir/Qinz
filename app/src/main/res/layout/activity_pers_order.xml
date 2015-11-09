@@ -1,0 +1,75 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        tools:context=".MainActivity">
+
+        <!-- 顶部选项栏 -->
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#24D5A7">
+            <ImageView
+                android:onClick="onClick_Back"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/main_top6"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:text="订单管理"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="22dp"
+                android:src="@drawable/main_top2"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="16dp"
+                />
+        </FrameLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <com.astuetz.PagerSlidingTabStrip
+                    android:id="@+id/tabstrip"
+                    android:layout_marginLeft="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    app:pstsIndicatorColor="@color/textqml"
+                    app:pstsUnderlineColor="@color/textqml"
+                    app:pstsTabTextColor="@color/textqml"
+                    app:pstsDividerColor="@color/textqml"
+                    />
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="800dp"
+                    android:layout_below="@+id/tabstrip"
+                    android:background="#e6e6e6"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

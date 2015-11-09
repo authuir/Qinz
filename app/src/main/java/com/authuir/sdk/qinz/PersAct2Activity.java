@@ -17,12 +17,9 @@ public class PersAct2Activity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(PersAct2Activity.this, MainActivity.class);
-        PersAct2Activity.this.startActivity(intent);
-        PersAct2Activity.this.finish();
+        finish();
     }
 
     @Override
@@ -49,11 +46,8 @@ public class PersAct2Activity extends ActionBarActivity {
 
     public void onClick_Back(View v)
     {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(PersAct2Activity.this, MainActivity.class);
-        PersAct2Activity.this.startActivity(intent);
-        PersAct2Activity.this.finish();
+        finish();
     }
 }

@@ -30,8 +30,15 @@ public class MainReqDetailActivity extends ActionBarActivity {
     {
         Intent intent = new Intent();
         intent.setClass(MainReqDetailActivity.this, MainActivity.class);
-        MainReqDetailActivity.this.startActivity(intent);
-        MainReqDetailActivity.this.finish();
+        MainReqDetailActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_Talk(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(MainReqDetailActivity.this, NewsTalkActivity.class);
+        MainReqDetailActivity.this.startActivityForResult(intent, 0);
     }
 
     @Override
@@ -43,12 +50,9 @@ public class MainReqDetailActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainReqDetailActivity.this, MainActivity.class);
-        MainReqDetailActivity.this.startActivity(intent);
-        MainReqDetailActivity.this.finish();
+        finish();
     }
 
     @Override

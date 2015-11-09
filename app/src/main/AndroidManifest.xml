@@ -35,10 +35,12 @@
         <activity android:name=".NewsTalkActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
 
         <activity android:name=".PersActivity"></activity>
+        <activity android:name=".PersOrderActivity"></activity>
         <activity android:name=".PersAct1Activity"></activity>
         <activity android:name=".PersAct2Activity"></activity>
         <activity android:name=".PersAct3Activity"></activity>
 
         <activity android:name=".FridMainActivity"></activity>
+
     </application>
 </manifest>

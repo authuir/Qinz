@@ -530,6 +530,7 @@
                         android:layout_height="fill_parent">
 
                         <FrameLayout
+                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"
@@ -593,6 +594,7 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"
@@ -655,6 +657,7 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"

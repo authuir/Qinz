@@ -33,12 +33,9 @@ public class SettingActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(SettingActivity.this, MainActivity.class);
-        SettingActivity.this.startActivity(intent);
-        SettingActivity.this.finish();
+        finish();
     }
 
     @Override
@@ -65,10 +62,8 @@ public class SettingActivity extends ActionBarActivity {
 
     public void onClick_Back(View v)
     {
-        Log.e("TAG", "BACK");
         setResult(1);
         super.onBackPressed();
         finish();
     }
-
 }

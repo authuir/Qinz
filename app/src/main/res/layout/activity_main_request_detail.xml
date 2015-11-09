@@ -241,6 +241,7 @@
             android:layout_marginTop="26dp"
             android:background="#FFFFFF">
             <ImageView
+                android:onClick="onClick_Talk"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/main_talk_icon"

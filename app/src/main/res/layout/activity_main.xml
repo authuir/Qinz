@@ -208,6 +208,7 @@
                         android:layout_height="48dp"
                         android:background="#24D5A7">
                         <ImageView
+                            android:onClick="onClick_Menu"
                             android:id="@+id/main_menuicon3"
                             android:layout_width="22dp"
                             android:layout_height="22dp"
@@ -222,7 +223,7 @@
                             android:layout_gravity="center"
                             android:text="好友"/>
                         <ImageView
-                            android:layout_width="22dp"
+                            android:layout_width="0dp"
                             android:layout_height="22dp"
                             android:src="@drawable/additemicon"
                             android:layout_gravity="right|center"
@@ -629,6 +630,7 @@
                                     android:layout_height="wrap_content">
 
                                     <FrameLayout
+                                        android:onClick="onClick_Talk"
                                         android:id="@+id/news_talk"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -638,7 +640,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content">
                                             <ImageView
-                                                android:onClick="onClick_news_frid"
+                                                android:onClick="onClick_Frid_main"
                                                 android:layout_height="60dp"
                                                 android:layout_width="60dp"
                                                 android:layout_marginLeft="10dp"
@@ -673,6 +675,7 @@
                                     </FrameLayout>
 
                                     <FrameLayout
+                                        android:onClick="onClick_Talk"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="3dp"
@@ -681,7 +684,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content">
                                             <ImageView
-                                                android:onClick="onClick_news_frid"
+                                                android:onClick="onClick_Frid_main"
                                                 android:layout_height="60dp"
                                                 android:layout_width="60dp"
                                                 android:layout_marginLeft="10dp"
@@ -744,6 +747,7 @@
                 android:layout_height="240dp"
                 android:background="@drawable/pers_bg">
                 <ImageView
+                    android:onClick="onClick_Menu"
                     android:layout_marginTop="15dp"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
@@ -760,6 +764,7 @@
                     android:layout_gravity="center_horizontal"
                     android:text="我的主页"/>
                 <ImageView
+                    android:onClick="onClick_Order"
                     android:layout_marginTop="15dp"
                     android:layout_width="22dp"
                     android:layout_height="22dp"

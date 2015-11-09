@@ -31,12 +31,15 @@ public class MainSearchActivity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(MainSearchActivity.this, MainActivity.class);
-        MainSearchActivity.this.startActivity(intent);
-        MainSearchActivity.this.finish();
+        finish();
+    }
+
+    public void onClick_Back(View v) {
+        setResult(1);
+        super.onBackPressed();
+        finish();
     }
 
     @Override

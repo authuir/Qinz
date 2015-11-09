@@ -17,12 +17,9 @@ public class PersAct3Activity extends ActionBarActivity {
     }
 
     public void onBackPressed() {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
-        Intent intent = new Intent();
-        intent.setClass(PersAct3Activity.this, MainActivity.class);
-        PersAct3Activity.this.startActivity(intent);
-        PersAct3Activity.this.finish();
+        finish();
     }
 
     @Override
@@ -49,11 +46,32 @@ public class PersAct3Activity extends ActionBarActivity {
 
     public void onClick_Back(View v)
     {
+        setResult(1);
         super.onBackPressed();
-        //System.out.println("按下了back键   onBackPressed()");
+        finish();
+    }
+
+    public void onClick_Detail(View v)
+    {
         Intent intent = new Intent();
-        intent.setClass(PersAct3Activity.this, MainActivity.class);
-        PersAct3Activity.this.startActivity(intent);
-        PersAct3Activity.this.finish();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(PersAct3Activity.this, MainDetailActivity.class);
+        PersAct3Activity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_buy(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(PersAct3Activity.this, MainRequestActivity.class);
+        PersAct3Activity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_sell(View v)
+    {
+        Intent intent = new Intent();
+        intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
+        intent.setClass(PersAct3Activity.this, MainUploadActivity.class);
+        PersAct3Activity.this.startActivityForResult(intent, 0);
     }
 }

@@ -62,7 +62,7 @@ public class FridMainActivity extends ActionBarActivity {
 
     public class MyPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "     我的物品     ", "        心愿单        ", "     任务活动     " };
+        private final String[] TITLES = { "     他的物品     ", "        心愿单        ", "    你们的联系   " };
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -80,7 +80,7 @@ public class FridMainActivity extends ActionBarActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return SuperAwesomeCardFragment.newInstance(position);
+            return FridMainFragement.newInstance(position);
         }
     }
 
@@ -115,7 +115,6 @@ public class FridMainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
