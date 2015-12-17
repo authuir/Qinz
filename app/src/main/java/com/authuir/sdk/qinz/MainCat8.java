@@ -17,7 +17,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 
-public class MainCat2 extends ActionBarActivity {
+public class MainCat8 extends ActionBarActivity {
     private TabHost mTabHost = null;
     private TabWidget mTabWidget = null;
     private ImageView mReqHead = null;
@@ -35,7 +35,7 @@ public class MainCat2 extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat2);
+        setContentView(R.layout.activity_cat8);
 
         floatingArea = (LinearLayout) findViewById(R.id.fltarea);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
@@ -83,8 +83,8 @@ public class MainCat2 extends ActionBarActivity {
         mReqHead.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainCat2.this, FridMainActivity.class);
-                MainCat2.this.startActivityForResult(intent, 0);
+                intent.setClass(MainCat8.this, FridMainActivity.class);
+                MainCat8.this.startActivityForResult(intent, 0);
             }
         });
 
@@ -114,16 +114,16 @@ public class MainCat2 extends ActionBarActivity {
     public void onClick_ReqDetail(View v)
     {
         Intent intent = new Intent();
-        intent.setClass(MainCat2.this, MainReqDetailActivity.class);
-        MainCat2.this.startActivityForResult(intent, 0);
+        intent.setClass(MainCat8.this, MainReqDetailActivity.class);
+        MainCat8.this.startActivityForResult(intent, 0);
     }
 
     public void onClick_Detail(View v)
     {
         Log.e("TAG", "CLICK");
         Intent intent = new Intent();
-        intent.setClass(MainCat2.this, MainDetailActivity.class);
-        MainCat2.this.startActivityForResult(intent, 0);
+        intent.setClass(MainCat8.this, MainDetailActivity.class);
+        MainCat8.this.startActivityForResult(intent, 0);
         //MainHotActivity.this.finish();
     }
 

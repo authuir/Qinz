@@ -20,12 +20,12 @@
             android:layout_height="48dp"
             android:background="#24D5A7">
             <ImageView
-                android:onClick="onClick_Back"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/main_top6"
                 android:layout_marginLeft="16dp"
-                android:layout_gravity="left|center"/>
+                android:layout_gravity="left|center"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,12 +34,12 @@
                 android:layout_gravity="center"
                 android:text="运动器材"/>
             <ImageView
-                android:onClick="onClick_Search"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/main_top5"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/main_top2"
                 android:layout_gravity="right|center"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginRight="16dp"
+                />
         </FrameLayout>
 
         <!-- 搜索栏 -->
@@ -56,6 +56,7 @@
                 android:layout_gravity="center_horizontal|top"
                 />
             <ImageView
+
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/main_searchicon"
@@ -118,141 +119,6 @@
                 android:layout_marginRight="106dp"
                 android:text="求购求租"/>
         </FrameLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:id="@+id/fltarea"
-            android:layout_width="fill_parent"
-            android:layout_height="130dp">
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:background="#FFFFFF">
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="年级"
-                    android:textColor="#000000"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="大一"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="大二"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="大三"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="大四"
-                    android:textColor="@color/textgray"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:background="#FFFFFF">
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="类别"
-                    android:textColor="#000000"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="教材"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="学习资料"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="生活娱乐"
-                    android:textColor="@color/textgray"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:background="#FFFFFF">
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="距离"
-                    android:textColor="#000000"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="校区"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="公寓"
-                    android:textColor="@color/textgray"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:background="#FFFFFF">
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="标准"
-                    android:textColor="#000000"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="由低到高"
-                    android:textColor="@color/textgray"/>
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="由新到旧"
-                    android:textColor="@color/textgray"/>
-            </LinearLayout>
-        </LinearLayout>
 
         <TabWidget
             android:id="@android:id/tabs"
@@ -340,7 +206,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod2"/>
+                                android:src="@drawable/bookmethod3"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -349,7 +215,7 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="租"/>
+                                android:text="卖"/>
                         </FrameLayout>
 
                         <FrameLayout
@@ -398,7 +264,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginTop="4dp">
                                             <ImageView
-                                                android:src="@drawable/booklisttag2"
+                                                android:src="@drawable/booklisttag1"
                                                 android:layout_marginRight="10dp"
                                                 android:layout_width="34dp"
                                                 android:layout_height="34dp" />
@@ -467,6 +333,72 @@
                                             android:layout_height="fill_parent"
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginTop="4dp">
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="top|right"
+                                android:src="@drawable/bookmethod3"/>
+                            <TextView
+                                android:layout_height="16dp"
+                                android:layout_width="16dp"
+                                android:textSize="14dp"
+                                android:textColor="#FFFFFF"
+                                android:layout_gravity="top|right"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginRight="3dp"
+                                android:text="卖"/>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:onClick="onClick_Detail"
+                            android:layout_width="fill_parent"
+                            android:layout_height="180dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="#FFFFFF">
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="180dp">
+                                <ImageView
+                                    android:layout_height="180dp"
+                                    android:layout_width="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/cloth4"/>
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="180dp">
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_height="180dp"
+                                        android:layout_width="300dp">
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="18dp"
+                                            android:text="辐射4周边"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginLeft="10dp"/>
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="18dp"
+                                            android:textColor="#30D09D"
+                                            android:text="￥ 60    0.8KM"
+                                            android:layout_marginLeft="10dp"/>
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="84dp"
+                                            android:text="L码，忍痛割爱啊！！！！！辐射粉千万不要错过！！"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginLeft="10dp"/>
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="190dp"
+                                            android:layout_height="fill_parent"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="4dp">
                                             <ImageView
                                                 android:src="@drawable/booklisttag1"
                                                 android:layout_marginRight="10dp"
@@ -485,7 +417,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod4"/>
+                                android:src="@drawable/bookmethod3"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -494,9 +426,83 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="赠"/>
+                                android:text="卖"/>
                         </FrameLayout>
 
+                        <FrameLayout
+                            android:onClick="onClick_Detail"
+                            android:layout_width="fill_parent"
+                            android:layout_height="180dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="#FFFFFF">
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="180dp">
+                                <ImageView
+                                    android:layout_height="180dp"
+                                    android:layout_width="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/sport5"/>
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="180dp">
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_height="180dp"
+                                        android:layout_width="300dp">
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="18dp"
+                                            android:text="男装格子衬衣"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginLeft="10dp"/>
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="18dp"
+                                            android:textColor="#30D09D"
+                                            android:text="￥ 30    0.9KM"
+                                            android:layout_marginLeft="10dp"/>
+                                        <TextView
+                                            android:layout_width="190dp"
+                                            android:layout_height="84dp"
+                                            android:text="款式比较旧，我妈给我买的，不想穿便宜转了。。。。"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginLeft="10dp"/>
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="190dp"
+                                            android:layout_height="fill_parent"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="4dp">
+                                            <ImageView
+                                                android:src="@drawable/booklisttag1"
+                                                android:layout_marginRight="10dp"
+                                                android:layout_width="34dp"
+                                                android:layout_height="34dp" />
+                                            <ImageView
+                                                android:src="@drawable/booklisttag2"
+                                                android:layout_marginRight="10dp"
+                                                android:layout_width="34dp"
+                                                android:layout_height="34dp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="top|right"
+                                android:src="@drawable/bookmethod3"/>
+                            <TextView
+                                android:layout_height="16dp"
+                                android:layout_width="16dp"
+                                android:textSize="14dp"
+                                android:textColor="#FFFFFF"
+                                android:layout_gravity="top|right"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginRight="3dp"
+                                android:text="卖"/>
+                        </FrameLayout>
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
@@ -514,8 +520,8 @@
                         android:orientation="vertical"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent">
+
                         <FrameLayout
-                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"
@@ -530,7 +536,7 @@
                                     android:layout_width="60dp"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
-                                    android:src="@drawable/main_hot_head1"/>
+                                    android:src="@drawable/main_hot_head2"/>
                                 <ImageView
                                     android:layout_height="75dp"
                                     android:layout_width="10dp"
@@ -556,7 +562,7 @@
                                             android:layout_width="240dp"
                                             android:layout_height="84dp"
                                             android:textSize="12dp"
-                                            android:text="天冷了要添装备了。。。。女，码字不要太大，暖和就行~"
+                                            android:text="天冷了要添装备了。。。。女，码字不要太大，暖和就行~~"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                     </LinearLayout>
@@ -566,7 +572,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod2"/>
+                                android:src="@drawable/bookmethod1"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -575,11 +581,10 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="租"/>
+                                android:text="买"/>
                         </FrameLayout>
 
                         <FrameLayout
-                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"
@@ -593,7 +598,7 @@
                                     android:layout_width="60dp"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
-                                    android:src="@drawable/main_hot_head2"/>
+                                    android:src="@drawable/main_hot_head3"/>
                                 <ImageView
                                     android:layout_height="75dp"
                                     android:layout_width="10dp"
@@ -629,7 +634,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod3"/>
+                                android:src="@drawable/bookmethod1"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -638,11 +643,10 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="卖"/>
+                                android:text="买"/>
                         </FrameLayout>
 
                         <FrameLayout
-                            android:onClick="onClick_ReqDetail"
                             android:layout_width="fill_parent"
                             android:layout_height="100dp"
                             android:layout_marginBottom="4dp"
@@ -656,7 +660,7 @@
                                     android:layout_width="60dp"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
-                                    android:src="@drawable/main_hot_head3"/>
+                                    android:src="@drawable/main_hot_head1"/>
                                 <ImageView
                                     android:layout_height="75dp"
                                     android:layout_width="10dp"
@@ -692,7 +696,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod3"/>
+                                android:src="@drawable/bookmethod2"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -701,8 +705,9 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="卖"/>
+                                android:text="租"/>
                         </FrameLayout>
+
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>

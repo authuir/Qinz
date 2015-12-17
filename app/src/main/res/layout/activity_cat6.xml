@@ -32,7 +32,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:layout_gravity="center"
-                android:text="运动器材"/>
+                android:text="代步工具"/>
             <ImageView
                 android:onClick="onClick_Search"
                 android:layout_width="24dp"
@@ -290,7 +290,7 @@
                                     android:layout_height="180dp"
                                     android:layout_width="160dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth1"/>
+                                    android:src="@drawable/cycle1"/>
                                 <FrameLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="180dp">
@@ -301,7 +301,7 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
-                                            android:text="TBboys2周年纪念同款"
+                                            android:text="单车"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
@@ -313,7 +313,7 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="84dp"
-                                            android:text="女版均码！自己穿有点太大了。。。T T"
+                                            android:text="大三狗教学楼很近不需要了低价大甩卖。"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <LinearLayout
@@ -365,7 +365,7 @@
                                     android:layout_height="180dp"
                                     android:layout_width="160dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth2"/>
+                                    android:src="@drawable/cycle2"/>
                                 <FrameLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="180dp">
@@ -376,19 +376,19 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
-                                            android:text="圆领黑色男T"
+                                            android:text="山地车"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
                                             android:textColor="#30D09D"
-                                            android:text="￥ 40    0.6KM"
+                                            android:text="￥1300   0.02KM"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="84dp"
-                                            android:text="店里买的，没穿过，全新转"
+                                            android:text="最近缺钱，爱车转让。"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <LinearLayout
@@ -435,7 +435,7 @@
                                     android:layout_height="180dp"
                                     android:layout_width="160dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth3"/>
+                                    android:src="@drawable/cycle3"/>
                                 <FrameLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="180dp">
@@ -446,19 +446,19 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
-                                            android:text="蓝色卡通卫衣"
+                                            android:text="三手车"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
                                             android:textColor="#30D09D"
-                                            android:text="￥ 45     0.8KM"
+                                            android:text="￥ 80     0.8KM"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="84dp"
-                                            android:text="材质不错，穿着舒适，便宜转，急用钱！"
+                                            android:text="毕业狗卖车凑路费，有意者联系我。"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <LinearLayout
@@ -549,14 +549,14 @@
                                             android:layout_width="240dp"
                                             android:layout_height="18dp"
                                             android:textSize="14dp"
-                                            android:text="羽绒背心"
+                                            android:text="求租电动车"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="240dp"
                                             android:layout_height="84dp"
                                             android:textSize="12dp"
-                                            android:text="天冷了要添装备了。。。。女，码字不要太大，暖和就行~"
+                                            android:text="想在女朋友面前装一次比，载她去看烟花！！！"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                     </LinearLayout>
@@ -612,14 +612,14 @@
                                             android:layout_width="240dp"
                                             android:layout_height="18dp"
                                             android:textSize="14dp"
-                                            android:text="绒线帽"
+                                            android:text="求购死飞"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="240dp"
                                             android:layout_height="84dp"
                                             android:textSize="12dp"
-                                            android:text="求一定暖色的绒线帽~最好是红色的，厚一点的~谢谢~"
+                                            android:text="院楼离宿舍远，想买个酷炫的死飞。"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                     </LinearLayout>
@@ -638,7 +638,7 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="卖"/>
+                                android:text="买"/>
                         </FrameLayout>
 
                         <FrameLayout
@@ -675,14 +675,14 @@
                                             android:layout_width="240dp"
                                             android:layout_height="18dp"
                                             android:textSize="14dp"
-                                            android:text="男式西装"
+                                            android:text="轮滑鞋"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="240dp"
                                             android:layout_height="84dp"
                                             android:textSize="12dp"
-                                            android:text="11月底要用，求借，170身高偏瘦，感谢！！！"
+                                            android:text="求女款新手鞋，37码的，急！！！！！"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                     </LinearLayout>
@@ -707,7 +707,5 @@
                 </ScrollView>
             </LinearLayout>
         </FrameLayout>
-
     </LinearLayout>
-
 </TabHost>

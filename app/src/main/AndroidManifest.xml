@@ -8,13 +8,16 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"></activity>
+
         <activity android:name=".MainHotActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
         <activity android:name=".MainDetailActivity"></activity>
         <activity android:name=".MainVerifyActivity"></activity>
@@ -24,7 +27,15 @@
         <activity android:name=".MainRequestActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
         <activity android:name=".MainUploadActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
         <activity android:name=".MainSearchActivity"></activity>
-        <activity android:name=".MainCat2"></activity>
+        <activity android:name=".MainCat2" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat3" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat4" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat5" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat6" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat7" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+        <activity android:name=".MainCat8" android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+
+        <activity android:name=".MainSmartActivity"></activity>
 
         <activity android:name=".TestActivity"></activity>
         <activity android:name=".DirtActivity"></activity>
@@ -41,6 +52,6 @@
         <activity android:name=".PersAct3Activity"></activity>
 
         <activity android:name=".FridMainActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
+
     </application>
 </manifest>

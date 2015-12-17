@@ -77,10 +77,15 @@ public class MainCartActivity extends ActionBarActivity {
     private List<CartList> mAppList ;
     private AppAdapter mAdapter ;
 
+    private ImageView img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cart);
+
+        img = (ImageView) findViewById(R.id.success);
+        img.setVisibility(View.INVISIBLE);
 
         mListView = (SwipeMenuListView) findViewById(R.id.cartlistview);
         mAppList = new ArrayList<CartList>();
@@ -249,6 +254,20 @@ public class MainCartActivity extends ActionBarActivity {
         setResult(1);
         super.onBackPressed();
         finish();
+    }
+
+    public void onClick_Back_Main(View v)
+    {
+        Intent intent=new Intent();
+        intent.setClass(MainCartActivity.this, MainActivity.class);
+        this.startActivity(intent);
+        this.finish();
+    }
+
+
+    public void onClick_buybuybuy(View v)
+    {
+        img.setVisibility(View.VISIBLE);
     }
 
 }

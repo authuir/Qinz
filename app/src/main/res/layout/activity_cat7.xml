@@ -32,7 +32,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:layout_gravity="center"
-                android:text="运动器材"/>
+                android:text="卡片"/>
             <ImageView
                 android:onClick="onClick_Search"
                 android:layout_width="24dp"
@@ -290,7 +290,7 @@
                                     android:layout_height="180dp"
                                     android:layout_width="160dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth1"/>
+                                    android:src="@drawable/card1"/>
                                 <FrameLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="180dp">
@@ -301,7 +301,7 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
-                                            android:text="TBboys2周年纪念同款"
+                                            android:text="健身卡转让"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
@@ -313,7 +313,7 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="84dp"
-                                            android:text="女版均码！自己穿有点太大了。。。T T"
+                                            android:text="准备考研没时间健身啦！转让！"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <LinearLayout
@@ -327,76 +327,6 @@
                                                 android:layout_marginRight="10dp"
                                                 android:layout_width="34dp"
                                                 android:layout_height="34dp" />
-                                            <ImageView
-                                                android:src="@drawable/booklisttag2"
-                                                android:layout_marginRight="10dp"
-                                                android:layout_width="34dp"
-                                                android:layout_height="34dp" />
-                                        </LinearLayout>
-                                    </LinearLayout>
-                                </FrameLayout>
-                            </LinearLayout>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod2"/>
-                            <TextView
-                                android:layout_height="16dp"
-                                android:layout_width="16dp"
-                                android:textSize="14dp"
-                                android:textColor="#FFFFFF"
-                                android:layout_gravity="top|right"
-                                android:layout_marginTop="3dp"
-                                android:layout_marginRight="3dp"
-                                android:text="租"/>
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:onClick="onClick_Detail"
-                            android:layout_width="fill_parent"
-                            android:layout_height="180dp"
-                            android:layout_marginBottom="2dp"
-                            android:background="#FFFFFF">
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="180dp">
-                                <ImageView
-                                    android:layout_height="180dp"
-                                    android:layout_width="160dp"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth2"/>
-                                <FrameLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="180dp">
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_height="180dp"
-                                        android:layout_width="300dp">
-                                        <TextView
-                                            android:layout_width="190dp"
-                                            android:layout_height="18dp"
-                                            android:text="圆领黑色男T"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                        <TextView
-                                            android:layout_width="190dp"
-                                            android:layout_height="18dp"
-                                            android:textColor="#30D09D"
-                                            android:text="￥ 40    0.6KM"
-                                            android:layout_marginLeft="10dp"/>
-                                        <TextView
-                                            android:layout_width="190dp"
-                                            android:layout_height="84dp"
-                                            android:text="店里买的，没穿过，全新转"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                        <LinearLayout
-                                            android:orientation="horizontal"
-                                            android:layout_width="190dp"
-                                            android:layout_height="fill_parent"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginTop="4dp">
                                             <ImageView
                                                 android:src="@drawable/booklisttag2"
                                                 android:layout_marginRight="10dp"
@@ -435,7 +365,7 @@
                                     android:layout_height="180dp"
                                     android:layout_width="160dp"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/cloth3"/>
+                                    android:src="@drawable/card2"/>
                                 <FrameLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="180dp">
@@ -446,19 +376,19 @@
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
-                                            android:text="蓝色卡通卫衣"
+                                            android:text="韦博英语会员卡"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="18dp"
                                             android:textColor="#30D09D"
-                                            android:text="￥ 45     0.8KM"
+                                            android:text="￥ 40    0.6KM"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="190dp"
                                             android:layout_height="84dp"
-                                            android:text="材质不错，穿着舒适，便宜转，急用钱！"
+                                            android:text="雅思考过了，卖卖卖！"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <LinearLayout
@@ -467,11 +397,6 @@
                                             android:layout_height="fill_parent"
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginTop="4dp">
-                                            <ImageView
-                                                android:src="@drawable/booklisttag1"
-                                                android:layout_marginRight="10dp"
-                                                android:layout_width="34dp"
-                                                android:layout_height="34dp" />
                                             <ImageView
                                                 android:src="@drawable/booklisttag2"
                                                 android:layout_marginRight="10dp"
@@ -485,7 +410,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod4"/>
+                                android:src="@drawable/bookmethod3"/>
                             <TextView
                                 android:layout_height="16dp"
                                 android:layout_width="16dp"
@@ -494,8 +419,9 @@
                                 android:layout_gravity="top|right"
                                 android:layout_marginTop="3dp"
                                 android:layout_marginRight="3dp"
-                                android:text="赠"/>
+                                android:text="卖"/>
                         </FrameLayout>
+
 
                     </LinearLayout>
                 </ScrollView>
@@ -549,14 +475,14 @@
                                             android:layout_width="240dp"
                                             android:layout_height="18dp"
                                             android:textSize="14dp"
-                                            android:text="羽绒背心"
+                                            android:text="求健身卡"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                         <TextView
                                             android:layout_width="240dp"
                                             android:layout_height="84dp"
                                             android:textSize="12dp"
-                                            android:text="天冷了要添装备了。。。。女，码字不要太大，暖和就行~"
+                                            android:text="天冷了要锻炼肌肉了，求求求！"
                                             android:layout_marginTop="10dp"
                                             android:layout_marginLeft="10dp"/>
                                     </LinearLayout>
@@ -578,131 +504,6 @@
                                 android:text="租"/>
                         </FrameLayout>
 
-                        <FrameLayout
-                            android:onClick="onClick_ReqDetail"
-                            android:layout_width="fill_parent"
-                            android:layout_height="100dp"
-                            android:layout_marginBottom="4dp"
-                            android:background="#FFFFFF">
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="fill_parent"
-                                android:layout_height="100dp">
-                                <ImageView
-                                    android:layout_height="60dp"
-                                    android:layout_width="60dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/main_hot_head2"/>
-                                <ImageView
-                                    android:layout_height="75dp"
-                                    android:layout_width="10dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_marginRight="5dp"
-                                    android:src="@drawable/main_split_solid"/>
-                                <FrameLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="100dp">
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_height="140dp"
-                                        android:layout_width="300dp">
-                                        <TextView
-                                            android:layout_width="240dp"
-                                            android:layout_height="18dp"
-                                            android:textSize="14dp"
-                                            android:text="绒线帽"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                        <TextView
-                                            android:layout_width="240dp"
-                                            android:layout_height="84dp"
-                                            android:textSize="12dp"
-                                            android:text="求一定暖色的绒线帽~最好是红色的，厚一点的~谢谢~"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                    </LinearLayout>
-                                </FrameLayout>
-                            </LinearLayout>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod3"/>
-                            <TextView
-                                android:layout_height="16dp"
-                                android:layout_width="16dp"
-                                android:textSize="14dp"
-                                android:textColor="#FFFFFF"
-                                android:layout_gravity="top|right"
-                                android:layout_marginTop="3dp"
-                                android:layout_marginRight="3dp"
-                                android:text="卖"/>
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:onClick="onClick_ReqDetail"
-                            android:layout_width="fill_parent"
-                            android:layout_height="100dp"
-                            android:layout_marginBottom="4dp"
-                            android:background="#FFFFFF">
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="fill_parent"
-                                android:layout_height="100dp">
-                                <ImageView
-                                    android:layout_height="60dp"
-                                    android:layout_width="60dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/main_hot_head3"/>
-                                <ImageView
-                                    android:layout_height="75dp"
-                                    android:layout_width="10dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_marginRight="5dp"
-                                    android:src="@drawable/main_split_solid"/>
-                                <FrameLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="100dp">
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_height="140dp"
-                                        android:layout_width="300dp">
-                                        <TextView
-                                            android:layout_width="240dp"
-                                            android:layout_height="18dp"
-                                            android:textSize="14dp"
-                                            android:text="男式西装"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                        <TextView
-                                            android:layout_width="240dp"
-                                            android:layout_height="84dp"
-                                            android:textSize="12dp"
-                                            android:text="11月底要用，求借，170身高偏瘦，感谢！！！"
-                                            android:layout_marginTop="10dp"
-                                            android:layout_marginLeft="10dp"/>
-                                    </LinearLayout>
-                                </FrameLayout>
-                            </LinearLayout>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="top|right"
-                                android:src="@drawable/bookmethod3"/>
-                            <TextView
-                                android:layout_height="16dp"
-                                android:layout_width="16dp"
-                                android:textSize="14dp"
-                                android:textColor="#FFFFFF"
-                                android:layout_gravity="top|right"
-                                android:layout_marginTop="3dp"
-                                android:layout_marginRight="3dp"
-                                android:text="卖"/>
-                        </FrameLayout>
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>

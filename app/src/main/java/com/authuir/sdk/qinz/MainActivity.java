@@ -144,8 +144,8 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, LoginActivity.class);
-                 //intent.setClass(MainActivity.this, MainUploadActivity.class);
+                 //intent.setClass(MainActivity.this, LoginActivity.class);
+                 intent.setClass(MainActivity.this, MainUploadActivity.class);
                  MainActivity.this.startActivityForResult(intent, 0);
              }
         });
@@ -260,7 +260,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-                intent.setClass(MainActivity.this, MainHotActivity.class);
+                intent.setClass(MainActivity.this, MainCat2.class);
                 MainActivity.this.startActivityForResult(intent,0);
                 //MainActivity.this.finish();
             }
@@ -269,7 +269,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-                intent.setClass(MainActivity.this, MainHotActivity.class);
+                intent.setClass(MainActivity.this, MainCat3.class);
                 MainActivity.this.startActivityForResult(intent,0);
                 //MainActivity.this.finish();
             }
@@ -501,7 +501,42 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_cat2(View v)
     {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat2.class);
+        intent.setClass(MainActivity.this, MainCat3.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_cat4(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, MainCat4.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_cat5(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, MainCat5.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_cat6(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, MainCat6.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_cat7(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, MainCat7.class);
+        MainActivity.this.startActivityForResult(intent, 0);
+    }
+
+    public void onClick_cat8(View v)
+    {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, MainCat8.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
 
@@ -512,6 +547,7 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, MainHotActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
+
 
     public void onClick_sell(View v)
     {

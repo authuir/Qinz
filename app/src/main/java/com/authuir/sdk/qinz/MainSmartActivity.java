@@ -22,12 +22,12 @@ import org.w3c.dom.Text;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class LoginActivity extends ActionBarActivity {
+public class MainSmartActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_main_smartdna);
     }
 
     public void onBackPressed() {
@@ -36,11 +36,4 @@ public class LoginActivity extends ActionBarActivity {
         finish();
     }
 
-    public void onClick_Main(View v)
-    {
-        Intent intent=new Intent();
-        intent.setClass(LoginActivity.this, MainActivity.class);
-        this.startActivity(intent);
-        this.finish();
-    }
 }

@@ -964,6 +964,7 @@
                         <FrameLayout style="@style/MainFrame1"
                             android:onClick="onClick_Hot">
                             <ImageView
+                                android:onClick="onClick_cat4"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon4"/>
                             <TextView
@@ -973,6 +974,7 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
+                                android:onClick="onClick_cat5"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon5"/>
                             <TextView
@@ -982,6 +984,7 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
+                                android:onClick="onClick_cat6"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon6"/>
                             <TextView
@@ -991,6 +994,7 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
+                                android:onClick="onClick_cat7"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon7"/>
                             <TextView
@@ -1000,6 +1004,7 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
+                                android:onClick="onClick_cat8"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon8"/>
                             <TextView

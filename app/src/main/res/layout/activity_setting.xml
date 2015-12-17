@@ -159,6 +159,7 @@
                     android:src="@drawable/settinginto"/>
             </FrameLayout>
             <FrameLayout
+                android:onClick="onClick_Smart"
                 android:background="#ffffff"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp">
