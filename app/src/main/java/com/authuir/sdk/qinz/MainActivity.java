@@ -31,11 +31,19 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.astuetz.PagerSlidingTabStrip;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +86,9 @@ public class MainActivity extends ActionBarActivity {
     private PagerSlidingTabStrip tabs;
     private ViewPager pager;
     private MyPagerAdapter adapter;
+
+    private RequestQueue mQueue;
+    private StringRequest authRequest;
 
     private class CartList{
         public String GoodsName;
@@ -333,6 +344,39 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mQueue = Volley.newRequestQueue(getApplicationContext());
+        authRequest = new StringRequest(
+                "http://www.baidu.com",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("TAG", "Responded"+response);
+                        try {
+                            JSONObject jsonObj = new JSONObject(response);
+                            int token = jsonObj.getInt("value");
+                            if (token == 1)
+                            {
+                            }
+                            else
+                                Log.d("TAG","Error");
+                        } catch (JSONException e) {
+                            System.out.println("Json parse error");
+                            e.printStackTrace();
+                            Log.d("TAG", e.toString());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        Log.e("TAG", error.getMessage(), error);
+                    }
+                }
+        );
+
+        mQueue.add(authRequest);
+
         InitVal();
         Intent intent = getIntent();
         String name="FROM:"+intent.getStringExtra("from");
@@ -340,8 +384,6 @@ public class MainActivity extends ActionBarActivity {
         Log.e("TAG", name);
         if (BACK!=null)
             Log.e("TAG",BACK);
-
-
     }
 
     @Override
