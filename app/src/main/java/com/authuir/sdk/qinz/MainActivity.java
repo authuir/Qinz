@@ -257,7 +257,6 @@ public class MainActivity extends ActionBarActivity {
         // set creator
         mListView.setMenuCreator(creator);
 
-
         mIcon1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -775,7 +774,6 @@ public class MainActivity extends ActionBarActivity {
             unsetMenuview(Fridview_icon, Fridview_text, Fridview_lout);
             Fridview_icon.setImageDrawable(res.getDrawable(R.drawable.dirt_icon2));
         }
-
 
         private void setMenuview(ImageView icon,TextView text,LinearLayout lout)
         {

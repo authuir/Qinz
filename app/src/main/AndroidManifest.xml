@@ -53,5 +53,7 @@
 
         <activity android:name=".FridMainActivity"></activity>
 
+        <activity android:name=".BlankActivity"></activity>
+
     </application>
 </manifest>
