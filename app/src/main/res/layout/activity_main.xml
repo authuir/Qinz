@@ -897,14 +897,18 @@
                     android:layout_width="fill_parent"
                     android:layout_height="48dp"
                     android:background="#24D5A7">
-                    <ImageView
+                    <FrameLayout
                         android:id="@+id/main_menuicon"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/main_top1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_gravity="left|center"
-                        />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/main_top1"
+                            android:layout_marginLeft="16dp"
+                            android:layout_gravity="left|center"
+                            />
+                    </FrameLayout>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -912,14 +916,20 @@
                         android:textSize="20dp"
                         android:layout_gravity="center"
                         android:text="广场"/>
-                    <ImageView
+                    <FrameLayout
                         android:onClick="onClick_Search"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/main_top2"
                         android:layout_gravity="right|center"
-                        android:layout_marginRight="16dp"
-                        />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp">
+                        <ImageView
+                            android:onClick="onClick_Search"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/main_top2"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="16dp"
+                            />
+                    </FrameLayout>
                 </FrameLayout>
 
                 <!-- 广场icon栏 -->
