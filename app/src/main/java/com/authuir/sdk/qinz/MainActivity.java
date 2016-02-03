@@ -114,7 +114,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void InitVal(){
-
         tabs = (PagerSlidingTabStrip) findViewById(R.id.tabstrip);
         pager = (ViewPager) findViewById(R.id.pager);
         adapter = new MyPagerAdapter(getSupportFragmentManager());
