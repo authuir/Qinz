@@ -71,7 +71,7 @@ public class LoginActivity extends ActionBarActivity {
     public void onClick_Main(View v)
     {
         final Intent intent=new Intent();
-        intent.setClass(LoginActivity.this, BlankActivity.class);
+        intent.setClass(LoginActivity.this, MainActivity.class);
 
         Response.Listener ll =  new Response.Listener<String>() {
             public void onResponse(String response) {
@@ -105,13 +105,14 @@ public class LoginActivity extends ActionBarActivity {
         Map<String, String> map = new HashMap<String, String>();
         EditText textusername =(EditText)findViewById(R.id.username);
         EditText textpassword =(EditText)findViewById(R.id.password);
-        map.put("username", "201211010231");
-        map.put("password", "zhouyu6266370");
+        /*map.put("username", "201211010231");
+        map.put("password", "xxx");*/
 
-        /*map.put("username", textusername.getText().toString());
-        map.put("password", textpassword.getText().toString());*/
-
+        map.put("username", textusername.getText().toString());
+        map.put("password", textpassword.getText().toString());
         map.put("ssid", serialnum);
+
+        Log.d("AUT",map.toString());
 
         mNetworkHandle.doPost("http://qinz.qnxg.net/ci/index.php/Login/log", ll, map);
 

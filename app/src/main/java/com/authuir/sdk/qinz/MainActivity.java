@@ -31,19 +31,11 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.astuetz.PagerSlidingTabStrip;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +43,16 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
+    enum qmld {
+        lmain, lfrid, lnews, lpers
+    }
+
+    private Class<?> Backto;
+
     private ImageView mIcon1 = null,mIcon2 = null,mIcon3 = null;
     private ImageView mIconmenu = null;
     private ImageView mBookIcon1 = null;
+    private ImageView mBookIcon2 = null;
 
     private com.authuir.sdk.fabbtn.FloatingActionButton mReque,mSell;
 
@@ -80,7 +79,6 @@ public class MainActivity extends ActionBarActivity {
     private ViewPager pager;
     private MyPagerAdapter adapter;
 
-
     private class CartList{
         public String GoodsName;
         public Drawable GoodsImg;
@@ -105,6 +103,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void InitVal(){
+
         tabs = (PagerSlidingTabStrip) findViewById(R.id.tabstrip);
         pager = (ViewPager) findViewById(R.id.pager);
         adapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -145,8 +144,8 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 //intent.setClass(MainActivity.this, LoginActivity.class);
-                 intent.setClass(MainActivity.this, MainUploadActivity.class);
+                 intent.setClass(MainActivity.this, LoginActivity.class);
+                 //intent.setClass(MainActivity.this, MainUploadActivity.class);
                  MainActivity.this.startActivityForResult(intent, 0);
              }
         });
@@ -247,6 +246,7 @@ public class MainActivity extends ActionBarActivity {
         // set creator
         mListView.setMenuCreator(creator);
 
+
         mIcon1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -260,7 +260,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-                intent.setClass(MainActivity.this, MainCat2.class);
+                intent.setClass(MainActivity.this, MainHotActivity.class);
                 MainActivity.this.startActivityForResult(intent,0);
                 //MainActivity.this.finish();
             }
@@ -269,7 +269,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra("from", "com.authuir.sdk.qinz.MainActivity");
-                intent.setClass(MainActivity.this, MainCat3.class);
+                intent.setClass(MainActivity.this, MainHotActivity.class);
                 MainActivity.this.startActivityForResult(intent,0);
                 //MainActivity.this.finish();
             }
@@ -340,6 +340,8 @@ public class MainActivity extends ActionBarActivity {
         Log.e("TAG", name);
         if (BACK!=null)
             Log.e("TAG",BACK);
+
+
     }
 
     @Override
@@ -499,42 +501,7 @@ public class MainActivity extends ActionBarActivity {
     public void onClick_cat2(View v)
     {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat3.class);
-        MainActivity.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_cat4(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat4.class);
-        MainActivity.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_cat5(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat5.class);
-        MainActivity.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_cat6(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat6.class);
-        MainActivity.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_cat7(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat7.class);
-        MainActivity.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_cat8(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, MainCat8.class);
+        intent.setClass(MainActivity.this, MainCat2.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
 
@@ -545,7 +512,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, MainHotActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
 
     public void onClick_sell(View v)
     {
@@ -731,6 +697,7 @@ public class MainActivity extends ActionBarActivity {
             unsetMenuview(Fridview_icon, Fridview_text, Fridview_lout);
             Fridview_icon.setImageDrawable(res.getDrawable(R.drawable.dirt_icon2));
         }
+
 
         private void setMenuview(ImageView icon,TextView text,LinearLayout lout)
         {

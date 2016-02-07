@@ -66,11 +66,4 @@ public class SettingActivity extends ActionBarActivity {
         super.onBackPressed();
         finish();
     }
-
-    public void onClick_Smart(View v)
-    {
-        Intent intent = new Intent();
-        intent.setClass(SettingActivity.this, MainSmartActivity.class);
-        SettingActivity.this.startActivityForResult(intent, 0);
-    }
 }

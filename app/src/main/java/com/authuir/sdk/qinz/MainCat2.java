@@ -2,19 +2,25 @@ package com.authuir.sdk.qinz;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatDialog;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import me.relex.circleindicator.CircleIndicator;
 
 
 public class MainCat2 extends ActionBarActivity {
@@ -25,26 +31,11 @@ public class MainCat2 extends ActionBarActivity {
     private ImageView mImgleft = null,mImgright = null;
     private TextView mTextleft = null,mTextright = null;
 
-    private String BackActivity = null;
-
-
-    LinearLayout floatingArea = null;
-
-    boolean is_showed = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat2);
+        setContentView(R.layout.activity_cat3);
 
-        floatingArea = (LinearLayout) findViewById(R.id.fltarea);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
-        floatingArea.setLayoutParams(params);
-
-        Intent intent = getIntent();
-        BackActivity = intent.getStringExtra("from");
-        if (BackActivity!=null)
-            Log.e("TAG",BackActivity);
 
         mReqHead = (ImageView) findViewById(R.id.request1);
 
@@ -83,8 +74,9 @@ public class MainCat2 extends ActionBarActivity {
         mReqHead.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainCat2.this, FridMainActivity.class);
-                MainCat2.this.startActivityForResult(intent, 0);
+                intent.setClass(MainCat2.this, MainReqDetailActivity.class);
+                MainCat2.this.startActivity(intent);
+                MainCat2.this.finish();
             }
         });
 
@@ -98,33 +90,13 @@ public class MainCat2 extends ActionBarActivity {
         mTabHost.setCurrentTab(0);
     }
 
-
     public void onBackPressed() {
-        Log.e("TAG", "BACK");
-        setResult(1);
         super.onBackPressed();
-        finish();
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        Log.d("TAG", "Catch");
-    }
-
-    public void onClick_ReqDetail(View v)
-    {
+        //System.out.println("按下了back键   onBackPressed()");
         Intent intent = new Intent();
-        intent.setClass(MainCat2.this, MainReqDetailActivity.class);
-        MainCat2.this.startActivityForResult(intent, 0);
-    }
-
-    public void onClick_Detail(View v)
-    {
-        Log.e("TAG", "CLICK");
-        Intent intent = new Intent();
-        intent.setClass(MainCat2.this, MainDetailActivity.class);
-        MainCat2.this.startActivityForResult(intent, 0);
-        //MainHotActivity.this.finish();
+        intent.setClass(MainCat2.this, MainActivity.class);
+        MainCat2.this.startActivity(intent);
+        MainCat2.this.finish();
     }
 
     @Override
@@ -132,14 +104,6 @@ public class MainCat2 extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    public void onClick_Back(View v)
-    {
-        Log.e("TAG", "BACK");
-        setResult(1);
-        super.onBackPressed();
-        finish();
     }
 
     @Override
@@ -155,24 +119,5 @@ public class MainCat2 extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClick_Search(View v)
-    {
-        if (is_showed)
-        {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
-            floatingArea.setLayoutParams(params);
-            is_showed = false;
-        } else {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(130));
-            floatingArea.setLayoutParams(params);
-            is_showed = true;
-        }
-
-    }
-    private int dp2px(int dp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
-                getResources().getDisplayMetrics());
     }
 }

@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÍøÂç²Ù×÷
+ * ç½‘ç»œæ“ä½œ
  * @author Authuir
  * @Time 2016-02-06 14:49:01
  *
@@ -49,11 +49,11 @@ public class Networks {
                 Request.Method.POST,URLS,
                 listener,
                 new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("TAG", error.getMessage(), error);
-            }
-        })
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("TAG", error.getMessage(), error);
+                    }
+                })
         {
             protected Map<String, String> getParams() throws AuthFailureError {
                 return param;

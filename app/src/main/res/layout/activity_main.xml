@@ -897,18 +897,14 @@
                     android:layout_width="fill_parent"
                     android:layout_height="48dp"
                     android:background="#24D5A7">
-                    <FrameLayout
+                    <ImageView
                         android:id="@+id/main_menuicon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp">
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/main_top1"
-                            android:layout_marginLeft="16dp"
-                            android:layout_gravity="left|center"
-                            />
-                    </FrameLayout>
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/main_top1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_gravity="left|center"
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -916,20 +912,14 @@
                         android:textSize="20dp"
                         android:layout_gravity="center"
                         android:text="广场"/>
-                    <FrameLayout
+                    <ImageView
                         android:onClick="onClick_Search"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/main_top2"
                         android:layout_gravity="right|center"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp">
-                        <ImageView
-                            android:onClick="onClick_Search"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/main_top2"
-                            android:layout_gravity="right|center"
-                            android:layout_marginRight="16dp"
-                            />
-                    </FrameLayout>
+                        android:layout_marginRight="16dp"
+                        />
                 </FrameLayout>
 
                 <!-- 广场icon栏 -->
@@ -974,7 +964,6 @@
                         <FrameLayout style="@style/MainFrame1"
                             android:onClick="onClick_Hot">
                             <ImageView
-                                android:onClick="onClick_cat4"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon4"/>
                             <TextView
@@ -984,7 +973,6 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
-                                android:onClick="onClick_cat5"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon5"/>
                             <TextView
@@ -994,7 +982,6 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
-                                android:onClick="onClick_cat6"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon6"/>
                             <TextView
@@ -1004,7 +991,6 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
-                                android:onClick="onClick_cat7"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon7"/>
                             <TextView
@@ -1014,7 +1000,6 @@
                         <FrameLayout style="@style/MainFrame2"
                             android:onClick="onClick_Hot">
                             <ImageView
-                                android:onClick="onClick_cat8"
                                 style="@style/MainIcon"
                                 android:src="@drawable/main_icon8"/>
                             <TextView
