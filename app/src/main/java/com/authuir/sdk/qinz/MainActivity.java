@@ -51,16 +51,9 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    enum qmld {
-        lmain, lfrid, lnews, lpers
-    }
-
-    private Class<?> Backto;
-
     private ImageView mIcon1 = null,mIcon2 = null,mIcon3 = null;
     private ImageView mIconmenu = null;
     private ImageView mBookIcon1 = null;
-    private ImageView mBookIcon2 = null;
 
     private com.authuir.sdk.fabbtn.FloatingActionButton mReque,mSell;
 
@@ -87,8 +80,6 @@ public class MainActivity extends ActionBarActivity {
     private ViewPager pager;
     private MyPagerAdapter adapter;
 
-    private RequestQueue mQueue;
-    private StringRequest authRequest;
 
     private class CartList{
         public String GoodsName;
@@ -341,39 +332,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mQueue = Volley.newRequestQueue(getApplicationContext());
-        authRequest = new StringRequest(
-                "http://www.baidu.com",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("TAG", "Responded"+response);
-                        try {
-                            JSONObject jsonObj = new JSONObject(response);
-                            int token = jsonObj.getInt("value");
-                            if (token == 1)
-                            {
-                            }
-                            else
-                                Log.d("TAG","Error");
-                        } catch (JSONException e) {
-                            System.out.println("Json parse error");
-                            e.printStackTrace();
-                            Log.d("TAG", e.toString());
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        Log.e("TAG", error.getMessage(), error);
-                    }
-                }
-        );
-
-        mQueue.add(authRequest);
 
         InitVal();
         Intent intent = getIntent();

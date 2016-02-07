@@ -4,6 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
     android:background="@drawable/registerbg">
     <ImageView
         android:layout_height="100dp"
@@ -27,7 +29,8 @@
             app:met_primaryColor="#63f8b2"
             app:met_textColorHint="#a3a3a3"
             android:textSize="18dp"
-            android:hint="请输入手机或邮箱"/>
+            android:id="@+id/username"
+            android:hint="请输入学号"/>
         <com.rengwuxian.materialedittext.MaterialEditText
             app:met_textColor="#3e3e3e"
             app:met_baseColor="#afafaf"
@@ -39,6 +42,7 @@
             android:layout_marginTop="70dp"
             android:textSize="18dp"
             android:inputType="textPassword"
+            android:id="@+id/password"
             android:hint="请输入密码"/>
         <TextView
             android:layout_marginTop="120dp"
