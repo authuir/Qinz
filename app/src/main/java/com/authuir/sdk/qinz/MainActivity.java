@@ -144,7 +144,7 @@ public class MainActivity extends ActionBarActivity {
         mSell.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
                  Intent intent = new Intent();
-                 intent.setClass(MainActivity.this, LoginActivity.class);
+                 intent.setClass(MainActivity.this, MainUploadActivity.class);
                  //intent.setClass(MainActivity.this, MainUploadActivity.class);
                  MainActivity.this.startActivityForResult(intent, 0);
              }

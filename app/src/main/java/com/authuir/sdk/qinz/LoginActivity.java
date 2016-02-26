@@ -2,6 +2,7 @@ package com.authuir.sdk.qinz;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -43,6 +44,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -105,16 +108,21 @@ public class LoginActivity extends ActionBarActivity {
         Map<String, String> map = new HashMap<String, String>();
         EditText textusername =(EditText)findViewById(R.id.username);
         EditText textpassword =(EditText)findViewById(R.id.password);
-        /*map.put("username", "201211010231");
-        map.put("password", "xxx");*/
+        map.put("username", "201211010231");
+        map.put("password", "zhouyu6266370");
 
-        map.put("username", textusername.getText().toString());
-        map.put("password", textpassword.getText().toString());
+        /*map.put("username", textusername.getText().toString());
+        map.put("password", textpassword.getText().toString());*/
         map.put("ssid", serialnum);
 
         Log.d("AUT",map.toString());
 
         mNetworkHandle.doPost("http://qinz.qnxg.net/ci/index.php/Login/log", ll, map);
+        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        pDialog.setTitleText("登录中...");
+        pDialog.setCancelable(false);
+        pDialog.show();
 
         //mQueue.add(AuthRequest);
         //this.startActivity(intent);
