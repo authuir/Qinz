@@ -39,9 +39,9 @@ public class MainUploadActivity extends ActionBarActivity {
     }
 
     /**
-     * @·½·¨Ãû: onBackPressed
-     * @ÃèÊö: ·µ»ØÉÏÒ»Ò³
-     * @²ÎÊı: none
+     * @å‡½æ•°å: onBackPressed
+     * @æè¿°: è¿”å›
+     * @å‚æ•°: none
      */
     public void onBackPressed() {
         setResult(1);
@@ -50,9 +50,9 @@ public class MainUploadActivity extends ActionBarActivity {
     }
 
     /**
-     * @·½·¨Ãû: onClick_Back
-     * @ÃèÊö: ·µ»ØÉÏÒ»Ò³
-     * @²ÎÊı: none
+     * @å‡½æ•°å: onClick_Back
+     * @æè¿°: è¿”å›
+     * @å‚æ•°: none
      */
     public void onClick_Back(View v)
     {
@@ -61,14 +61,16 @@ public class MainUploadActivity extends ActionBarActivity {
         finish();
     }
 
+    /**
+     * @å‡½æ•°å: pic_pick
+     * @æè¿°: è¿”å›
+     * @å‚æ•°: int i:ç¬¬iå¼ è¢«é€‰æ‹©çš„å›¾ç‰‡
+     */
     private void pic_pick(int i)
     {
         Intent intent = new Intent();
-                /* ¿ªÆôPictures»­ÃæTypeÉè¶¨Îªimage */
         intent.setType("image/*");
-                /* Ê¹ÓÃIntent.ACTION_GET_CONTENTÕâ¸öAction */
         intent.setAction(Intent.ACTION_GET_CONTENT);
-                /* È¡µÃÏàÆ¬ºó·µ»Ø±¾»­Ãæ */
         startActivityForResult(intent, i);
     }
     public void onClick_select_pic1(View v)
@@ -86,7 +88,11 @@ public class MainUploadActivity extends ActionBarActivity {
         pic_pick(3);
     }
 
-    @Override
+    /**
+     * @å‡½æ•°å: onActivityResult
+     * @æè¿°: é€‰æ‹©å›¾ç‰‡ä¹‹åå¤„ç†å‡½æ•°
+     * @å‚æ•°: int requestCode:ç¬¬xå¼ å›¾ç‰‡
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 || requestCode == 2 ||requestCode == 3) {
             Uri uri = data.getData();
@@ -106,8 +112,9 @@ public class MainUploadActivity extends ActionBarActivity {
                 Bitmap d = BitmapFactory.decodeStream(cr.openInputStream(uri));
                 int nh = (int) ( d.getHeight() * (512.0 / d.getWidth()) );
                 Bitmap scaled = Bitmap.createScaledBitmap(d, 512, nh, true);
-                /* ½«BitmapÉè¶¨µ½ImageView*/
+                /* ç¼©æ”¾Bitmap é˜²æ­¢å†…å­˜ä¸å¤Ÿæº¢å‡º*/
                 imageView.setImageBitmap(scaled);
+                /* é‡Šæ”¾Bitmap é˜²æ­¢å†…å­˜ä¸å¤Ÿæº¢å‡º*/
                 if(d != null && !d.isRecycled()) {
                     d.recycle();
                 }
