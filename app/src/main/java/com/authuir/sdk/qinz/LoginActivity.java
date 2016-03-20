@@ -47,7 +47,6 @@ import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-
 public class LoginActivity extends ActionBarActivity {
 
     public ContentResolver Resolver = null;
@@ -65,12 +64,22 @@ public class LoginActivity extends ActionBarActivity {
         mNetworkHandle = new Networks(this);
     }
 
+    /**
+     * @方法: onBackPressed
+     * @功能: 返回
+     * @参数: View v
+     */
     public void onBackPressed() {
         setResult(1);
         super.onBackPressed();
         finish();
     }
 
+    /**
+     * @方法: onClick_Main
+     * @功能: 处理登录操作
+     * @参数: View v
+     */
     public void onClick_Main(View v)
     {
         final Intent intent=new Intent();

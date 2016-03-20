@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 网络操作
+ * 网络操作类
  * @author Authuir
  * @Time 2016-02-06 14:49:01
  *
@@ -32,6 +32,11 @@ public class Networks {
     public ContentResolver Resolver = null;
     CookieManager manager;
 
+    /**
+     * @方法: Networks
+     * @功能: 构造方法
+     * @参数: android.content.Context env：要加载网络功能的Context
+     */
     public Networks(android.content.Context env)
     {
         Resolver = env.getContentResolver();
@@ -42,7 +47,13 @@ public class Networks {
         CookieHandler.setDefault(manager);
     }
 
-
+    /**
+     * @方法: doPost
+     * @功能: 发送Post请求
+     * @参数: String URLS：POST请求URL
+     *         Response.Listener<String> listener：请求完毕的回调方法
+     *         final Map<String, String> param：POST请求参数
+     */
     public void doPost( String URLS , Response.Listener<String> listener , final Map<String, String> param)
     {
         StringRequest mRequest = new StringRequest(

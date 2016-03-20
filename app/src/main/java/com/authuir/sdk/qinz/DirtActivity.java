@@ -26,10 +26,7 @@ public class DirtActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dirt);
-
         final ResideLayout resideLayout = (ResideLayout) findViewById(R.id.reside_layout);
-
-
     }
 
     private class SimplePagerAdapter extends FragmentPagerAdapter{

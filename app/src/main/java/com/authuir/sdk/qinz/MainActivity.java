@@ -43,12 +43,6 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    enum qmld {
-        lmain, lfrid, lnews, lpers
-    }
-
-    private Class<?> Backto;
-
     private ImageView mIcon1 = null,mIcon2 = null,mIcon3 = null;
     private ImageView mIconmenu = null;
     private ImageView mBookIcon1 = null;
@@ -344,14 +338,12 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -428,7 +420,6 @@ public class MainActivity extends ActionBarActivity {
         qml.setView(0);
         Log.d("TAG", "Main");
     }
-
     public void onClick_news_frid(View v)
     {
         Intent intent = new Intent();
@@ -443,7 +434,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, PersAct1Activity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
     public void onClick_Talk(View v)
     {
         Intent intent = new Intent();
@@ -451,7 +441,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, NewsTalkActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
     public void onClick_act2(View v)
     {
         Intent intent = new Intent();
@@ -459,7 +448,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, PersAct2Activity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
     public void onClick_act3(View v)
     {
         Intent intent = new Intent();
@@ -467,7 +455,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, PersAct3Activity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
     public void onClick_BookDetail(View v)
     {
         Intent intent = new Intent();
@@ -475,7 +462,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, MainDetailActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
     public void onClick_Search(View v)
     {
         Intent intent = new Intent();
@@ -520,7 +506,6 @@ public class MainActivity extends ActionBarActivity {
         intent.setClass(MainActivity.this, MainUploadActivity.class);
         MainActivity.this.startActivityForResult(intent, 0);
     }
-
 
     public void onClick_Menu(View v) {
         Log.d("TAG", "book click");
@@ -724,7 +709,6 @@ public class MainActivity extends ActionBarActivity {
     public class MyPagerAdapter extends FragmentPagerAdapter {
 
         private final String[] TITLES = { "     我的物品     ", "        心愿单        ", "     任务活动     " };
-
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
