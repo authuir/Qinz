@@ -239,6 +239,7 @@
         android:layout_marginTop="2dp">
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/button"
+            android:onClick="onClick_Upload"
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:background="@color/textqml"

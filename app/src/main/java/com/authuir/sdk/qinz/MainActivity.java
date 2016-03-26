@@ -507,7 +507,8 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.this.startActivityForResult(intent, 0);
     }
 
-    public void onClick_Menu(View v) {
+    public void onClick_Menu(View v)
+    {
         Log.d("TAG", "book click");
         residelout.smoothSlideTo(1.f);
     }
@@ -682,7 +683,6 @@ public class MainActivity extends ActionBarActivity {
             unsetMenuview(Fridview_icon, Fridview_text, Fridview_lout);
             Fridview_icon.setImageDrawable(res.getDrawable(R.drawable.dirt_icon2));
         }
-
 
         private void setMenuview(ImageView icon,TextView text,LinearLayout lout)
         {

@@ -1,7 +1,6 @@
 package com.authuir.sdk.qinz;
 
 import android.content.ContentResolver;
-import android.provider.Settings;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
@@ -12,12 +11,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.net.CookieHandler;
 import java.net.CookieManager;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -59,12 +54,14 @@ public class Networks {
         StringRequest mRequest = new StringRequest(
                 Request.Method.POST,URLS,
                 listener,
-                new Response.ErrorListener() {
-                    @Override
+                /*new Response.ErrorListener() {
                     public void onErrorResponse(VolleyError error) {
                         Log.e("TAG", error.getMessage(), error);
                     }
-                })
+                }*/
+                null
+
+        )
         {
             protected Map<String, String> getParams() throws AuthFailureError {
                 return param;

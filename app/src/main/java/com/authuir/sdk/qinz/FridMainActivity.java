@@ -35,6 +35,11 @@ import org.w3c.dom.Text;
 
 import me.relex.circleindicator.CircleIndicator;
 
+/*
+*
+* 备注：首页的朋友页面
+*
+*/
 
 public class FridMainActivity extends ActionBarActivity {
 

@@ -71,22 +71,29 @@ public class MainCartActivity extends ActionBarActivity {
             GoodsDetail = detail;
             GoodsImg = MainCartActivity.this.getResources().getDrawable(icon_id);
         }
+        public CartList(String title,String detail)
+        {
+            Res = Resources.getSystem();
+            GoodsName = title;
+            GoodsDetail = detail;
+            GoodsImg = MainCartActivity.this.getResources().getDrawable(R.drawable.main_head1);
+        }
     }
 
     private SwipeMenuListView mListView ;
     private List<CartList> mAppList ;
     private AppAdapter mAdapter ;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cart);
+
 
         mListView = (SwipeMenuListView) findViewById(R.id.cartlistview);
         mAppList = new ArrayList<CartList>();
         mAdapter= new AppAdapter(this);
 
-        CartList data1 = new CartList(),data2 = new CartList();
+        CartList data1 = new CartList("123","test"),data2 = new CartList("5656","tsdfsdfest");
 
         mAppList.add(data1);
         mAppList.add(data2);
@@ -186,28 +193,6 @@ public class MainCartActivity extends ActionBarActivity {
         finish();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public class AppAdapter extends BaseAdapter {
 
         public AppAdapter(Context context) {
@@ -234,6 +219,8 @@ public class MainCartActivity extends ActionBarActivity {
             if (convertView == null) {
                 convertView = View.inflate(getApplicationContext(),R.layout.item_list_cart, null);
             }
+            TextView title = (TextView)convertView.findViewById(R.id.cart_item_title);
+            title.setText(mAppList.get(position).GoodsName);
             CartList item = getItem(position);
             return convertView;
         }
@@ -244,8 +231,7 @@ public class MainCartActivity extends ActionBarActivity {
                 getResources().getDisplayMetrics());
     }
 
-    public void onClick_Back(View v)
-    {
+    public void onClick_Back(View v) {
         setResult(1);
         super.onBackPressed();
         finish();

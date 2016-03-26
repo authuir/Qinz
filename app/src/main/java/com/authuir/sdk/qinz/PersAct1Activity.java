@@ -8,6 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+/*
+*
+* 备注：用于处理首页的三个活动
+*
+*/
+
 public class PersAct1Activity extends ActionBarActivity {
 
     @Override

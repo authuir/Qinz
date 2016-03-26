@@ -1,33 +1,20 @@
 package com.authuir.sdk.qinz;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatDialog;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TabHost;
-import android.widget.TabWidget;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.FileNotFoundException;
-
-import me.relex.circleindicator.CircleIndicator;
 
 
 public class MainUploadActivity extends ActionBarActivity {
@@ -59,6 +46,16 @@ public class MainUploadActivity extends ActionBarActivity {
         setResult(1);
         super.onBackPressed();
         finish();
+    }
+
+    /**
+     * @函数名: onClick_Upload
+     * @描述: 上传
+     * @参数: none
+     */
+    public void onClick_Upload(View v)
+    {
+
     }
 
     /**
@@ -97,6 +94,8 @@ public class MainUploadActivity extends ActionBarActivity {
         if (requestCode == 1 || requestCode == 2 ||requestCode == 3) {
             Uri uri = data.getData();
             Log.e("uri", uri.toString());
+            Log.e("uri", this.getRealFilePath(this, uri));
+
             ContentResolver cr = this.getContentResolver();
             ImageView imageView = (ImageView) findViewById(R.id.goods_pic1);
             switch (requestCode)
@@ -124,5 +123,34 @@ public class MainUploadActivity extends ActionBarActivity {
         } else {
             Log.e("uri", "test");
         }
+    }
+    /**
+     * Try to return the absolute file path from the given Uri
+     *
+     * @param context
+     * @param uri
+     * @return the file path or null
+     */
+    public static String getRealFilePath( final Context context, final Uri uri ) {
+        if ( null == uri ) return null;
+        final String scheme = uri.getScheme();
+        String data = null;
+        if ( scheme == null )
+            data = uri.getPath();
+        else if ( ContentResolver.SCHEME_FILE.equals( scheme ) ) {
+            data = uri.getPath();
+        } else if ( ContentResolver.SCHEME_CONTENT.equals( scheme ) ) {
+            Cursor cursor = context.getContentResolver().query( uri, new String[] { MediaStore.Images.ImageColumns.DATA }, null, null, null );
+            if ( null != cursor ) {
+                if ( cursor.moveToFirst() ) {
+                    int index = cursor.getColumnIndex( MediaStore.Images.ImageColumns.DATA );
+                    if ( index > -1 ) {
+                        data = cursor.getString( index );
+                    }
+                }
+                cursor.close();
+            }
+        }
+        return data;
     }
 }

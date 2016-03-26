@@ -126,7 +126,7 @@ public class LoginActivity extends ActionBarActivity {
 
         Log.d("AUT",map.toString());
 
-        mNetworkHandle.doPost("http://qinz.qnxg.net/ci/index.php/Login/log", ll, map);
+        mNetworkHandle.doPost("https://qinz.qnxg.net/ci/index.php/Login/log", ll, map);
         SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         pDialog.setTitleText("登录中...");
