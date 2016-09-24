@@ -1,3 +1,6 @@
 # Powered By Authuir #
-A application for two-hand trade
-code area
+A Android App for second-hand transactions
+## Feature ##
+ * Based On Google Material Design
+ * 3-level Menu
+ 
